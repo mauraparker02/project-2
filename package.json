@@ -4,7 +4,8 @@
   "description": "\"An adoption app\" ",
   "main": "index.js",
   "scripts": {
-    "test": "node server "
+    "test": "node server ",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,8 @@
   },
   "homepage": "https://github.com/mauraparker02/project-2#readme",
   "dependencies": {
-    "handlebars": "^4.7.6",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.7"
   },
