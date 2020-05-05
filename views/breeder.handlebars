@@ -1,23 +1,23 @@
-    <div class="uk-container">
+<h2>Shelter Helper</h2>
 
-        <h2>Shelter Helper</h2>
+<div class="uk-container">
+    <form>
+        {{#each result}}
+        <div class="uk-margin">
+            <label>Breed:</label>
+            <select class="uk-select select-breed">
+                <option>{{this.breed}}</option>
+            </select>
+        </div>
+        {{/each}}
 
-        <form>
-            <div class="uk-margin">
-                <label>Breed:</label>
-                <select class="uk-select">
-                    <option>Option 01</option>
-                    <option>Option 02</option>
-                </select>
-            </div>
-
-            <div class="uk-margin">
-                <label>City:</label>
-                <select class="uk-select">
-                    <option>Option 01</option>
-                    <option>Option 02</option>
-                </select>
-            </div>
-        </form>
-        
-    </div>
+        {{#each result}}
+        <div class="uk-margin select-location">
+            <label>City:</label>
+            <select class="uk-select">
+                <option>{{this.city}}</option>
+            </select>
+        </div>
+        {{/each}}
+    </form>
+</div>
