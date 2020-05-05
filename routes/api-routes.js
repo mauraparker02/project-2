@@ -19,6 +19,13 @@ router.get("/add", function(req, res) {
     res.render("addShelter");
 });
 
+router.post("/api/shelters", function(req, res) {
+    console.log(req.body);
+    db.Shelter.create(req.body).then(function(data) {
+        res.json(data);
+    });
+});
+
 // axios({
 
 // });
