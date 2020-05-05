@@ -22,6 +22,6 @@ app.use(routes);
 
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
-    console.log("App now listening at localhost:" + PORT);
+    console.log("App now listening at http://localhost:" + PORT);
   });
 });
