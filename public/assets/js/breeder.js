@@ -1,3 +1,6 @@
+$("#searchBreed").on("click", function(event){
+    event.preventDefault();
+})
 // SHOWING BREED DATA FROM API ROUTE //
 $(".select-breed").on("click", function(event) {
     event.preventDefault();

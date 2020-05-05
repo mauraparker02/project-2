@@ -1,30 +1,45 @@
-var express = require("express");
-var router = express.Router();
 const db = require("../models");
+const express = require("express");
+const router = express.Router();
 
-module.exports = function(app) {
-    app.get("/", function(req, res){
-        res.send("Hello World");
-    });
+console.log(db.Result);
 
-    // GETTING BREED DATA FROM DATABASE //
-    router.get("/breeds", function(req,res){
-        console.log("hitting route");
-        dog.breed(function(data){
-            res.render("breeder", {
-                dog: data
-            })
+router.get("/", function(req, res) {
+    res.render("index");
+});
+
+// GETTING BREED DATA FROM DATABASE //
+router.get("/breeds", function(req,res){
+    console.log("hitting route");
+    db.Result.findAll({}).then(function(data){
+        res.render("breeder", {
+            dog: data
         })
     })
+})
 
-    // GETTING LOCATION DATA FROM DATABASE //
-    router.get("/location", function(req,res){
-        console.log("hitting route");
-        dog.city(function(data){
-            res.render("breeder", {
-                dog: data
-            })
+//GETTING LOCATION DATA FROM DATABASE //
+router.get("/location", function(req,res){
+    console.log("hitting route");
+    db.Result.findAll({}).then(function(data){
+        console.log(data[0].dataValues)
+        res.render("breeder", {
+            dog: data
         })
     })
+})
 
-};
+router.get("/adopt", function(req, res) {
+    res.render("user");
+});
+
+router.get("/shelterHelper", function(req, res) {
+    res.render("breeder");
+});
+
+    // app.get("/", function(req, res){
+    //     res.send("Hello World");
+    // });
+
+
+module.exports = router;

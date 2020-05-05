@@ -1,23 +1,79 @@
-<h2>Shelter Helper</h2>
+<div class="uk-container">
+    <h1>Find Popular Dog Breeds in Different Cities</h1>
+    <h5>Search by...</h5>
+    <button class="uk-button uk-button-primary" id="searchBreed">Breed</button>
+    <button class="uk-button uk-button-primary" id="searchCity">City</button>
+</div>
 
+<br>
+<br>
+<br>
+{{!-- IF BY BREED --}}
 <div class="uk-container">
     <form>
-        {{#each result}}
         <div class="uk-margin">
             <label>Breed:</label>
             <select class="uk-select select-breed">
-                <option>{{this.breed}}</option>
+                {{#each dog}}
+                <option>{{dataValues.breed}}</option>
+                {{/each}}
             </select>
         </div>
-        {{/each}}
-
-        {{#each result}}
-        <div class="uk-margin select-location">
-            <label>City:</label>
-            <select class="uk-select">
-                <option>{{this.city}}</option>
-            </select>
-        </div>
-        {{/each}}
+        <button class="uk-button uk-button-primary">Search</button>
     </form>
+</div>
+
+<div class="uk-container">
+     <table class="uk-table uk-table-divider">
+            <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Hits</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each dog}}
+                <tr> 
+                    <td>{{dataValues.city}}</td>
+                    <td>Number of Hits for Breed</td>
+                </tr>
+                {{/each}}
+            </tbody>
+    </table>
+</div>
+<br>
+<br>
+<br>
+{{!-- IF BY CITY --}}
+<div class="uk-container">
+    <form>
+        <div class="uk-margin">
+            <label>City:</label>
+            <select class="uk-select select-breed">
+                {{#each dog}}
+                <option>{{dataValues.city}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <button class="uk-button uk-button-primary">Search</button>
+    </form>
+</div>
+
+<div class="uk-container">
+     <table class="uk-table uk-table-divider">
+            <thead>
+                <tr>
+                    <th>Breed</th>
+                    <th>Hits</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each dog}}
+                <tr> 
+                    <td>{{dataValues.breed}}</td>
+                    <td>Number of Hits for Breed</td>
+                </tr>
+                {{/each}}
+            </tbody>
+    </table>
 </div>
