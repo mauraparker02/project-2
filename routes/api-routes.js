@@ -15,6 +15,10 @@ router.get("/shelterHelper", function(req, res) {
     res.render("breeder");
 });
 
+router.get("/add", function(req, res) {
+    res.render("addShelter");
+});
+
 // axios({
 
 // });
