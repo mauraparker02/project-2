@@ -10,10 +10,10 @@ $(function() {
 
     $("#helpShelter").on("click", function(e) {
         e.preventDefault();
-        $.ajax("/shelterHelper", {
+        $.ajax("/shelterHelper/breeds", {
             type: "GET"
         }).then(function() {
-            location.assign("/shelterHelper");
+            location.assign("/shelterHelper/breeds");
         });
     });
 });

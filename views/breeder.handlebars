@@ -1,28 +1,33 @@
 <div class="uk-container">
     <h1>Find Popular Dog Breeds in Different Cities</h1>
     <h5>Search by...</h5>
-    <button class="uk-button uk-button-primary" id="searchBreed">Breed</button>
-    <button class="uk-button uk-button-primary" id="searchCity">City</button>
+    <button class="uk-button uk-button-primary" id="byBreed">Breed</button>
+    <button class="uk-button uk-button-primary" id="byCity">City</button>
 </div>
 
 <br>
 <br>
 <br>
+
 {{!-- IF BY BREED --}}
+<div id="breed">
 <div class="uk-container">
     <form>
         <div class="uk-margin">
             <label>Breed:</label>
-            <select class="uk-select select-breed">
+            <select class="uk-select dogType" id="pickBreed">
                 {{#each dog}}
                 <option>{{dataValues.breed}}</option>
+                {{!-- req.params.breed?? --}}
                 {{/each}}
             </select>
         </div>
-        <button class="uk-button uk-button-primary">Search</button>
+        <button class="uk-button uk-button-primary" id="searchBreed">Search</button>
     </form>
 </div>
+</div>
 
+<div id="breed-table">
 <div class="uk-container">
      <table class="uk-table uk-table-divider">
             <thead>
@@ -41,15 +46,20 @@
             </tbody>
     </table>
 </div>
+</div>
+
+
 <br>
 <br>
 <br>
+
 {{!-- IF BY CITY --}}
+<div id="city">
 <div class="uk-container">
     <form>
         <div class="uk-margin">
             <label>City:</label>
-            <select class="uk-select select-breed">
+            <select class="uk-select">
                 {{#each dog}}
                 <option>{{dataValues.city}}</option>
                 {{/each}}
@@ -58,7 +68,9 @@
         <button class="uk-button uk-button-primary">Search</button>
     </form>
 </div>
+</div>
 
+<div id="city-table">
 <div class="uk-container">
      <table class="uk-table uk-table-divider">
             <thead>
@@ -77,3 +89,5 @@
             </tbody>
     </table>
 </div>
+</div>
+
