@@ -1,23 +1,69 @@
-    <div class="uk-container">
+<div class="uk-container">
+    <h1>Find Popular Dog Breeds in Different Cities</h1>
+    <h5>Search by...</h5>
+    <button class="uk-button uk-button-primary" id="byBreed">Breed</button>
+    <button class="uk-button uk-button-primary" id="byCity">City</button>
+</div>
 
-        <h2>Shelter Helper</h2>
-        <button class="uk-button uk-button-default uk-button" id="add-shelter">Add Shelter/Dogs</button>
+{{!-- IF SORTED BY BREED --}}
+<div id="breed">
+    <div class="uk-container">
         <form>
             <div class="uk-margin">
-                <label>Breed:</label>
-                <select class="uk-select">
-                    <option>Option 01</option>
-                    <option>Option 02</option>
+                <label>Choose a Breed:</label>
+                <select class="uk-select" id="pickBreed">
+                    {{#each dog}}
+                    <option>{{dataValues.breed}}</option>
+                    {{/each}}
                 </select>
             </div>
-
-            <div class="uk-margin">
-                <label>City:</label>
-                <select class="uk-select">
-                    <option>Option 01</option>
-                    <option>Option 02</option>
-                </select>
-            </div>
+            <button class="uk-button uk-button-primary" id="searchBreed">Search</button>
         </form>
-        
     </div>
+
+    <div id="breed-table">
+        <div class="uk-container">
+            <table class="uk-table uk-table-divider">
+                <thead>
+                    <tr>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody id="breedTable">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{{!-- IF SORTED BY CITY --}}
+<div id="city">
+    <div class="uk-container">
+        <form>
+            <div class="uk-margin">
+                <label>Choose a City:</label>
+                <select class="uk-select" id="pickCity">
+                    {{#each dog}}
+                    <option>{{dataValues.city}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <button class="uk-button uk-button-primary" id="searchCity">Search</button>
+        </form>
+    </div>
+
+    <div id="city-table">
+        <div class="uk-container">
+            <table class="uk-table uk-table-divider">
+                <thead>
+                    <tr>
+                        <th>Breed</th>
+                    </tr>
+                </thead>
+                <tbody id="cityTable">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
