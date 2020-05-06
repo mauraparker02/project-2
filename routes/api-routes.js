@@ -1,6 +1,9 @@
 const db = require("../models");
 const express = require("express");
 const router = express.Router();
+// const sequelize = require("sequelize");
+const {QueryTypes} = require('sequelize');
+
 const axios = require("axios");
 
 router.get("/", function (req, res) {
@@ -8,12 +11,34 @@ router.get("/", function (req, res) {
 });
 
 // SHOW ALL INFORMATION FROM DATABASE //
-router.get("/shelterHelper/home", function (req, res) {
-    db.Result.findAll({}).then(function (data) {
-        res.render("breeder", {
-            dog: data
-        })
+router.get("/shelterHelper/home", async function (req, res) {
+    console.log('im before the queries')
+    const breeds = await db.sequelize.query("SELECT DISTINCT breed FROM `Results`", {
+        type: QueryTypes.SELECT
+    } );
+    const location = await db.sequelize.query("SELECT DISTINCT city FROM `Results`", {
+        type: QueryTypes.SELECT
+    } );
+    console.log('im after the queries and before the res')
+    console.log(breeds)
+    console.log(location)
+    res.render("breeder", {
+        dog: breeds,
+        location: location
     })
+    // db.Result.findAll({}).then(function (data) {
+    //     console.log(data)
+    //     const newBreed = [];
+    //     for(i=0; i<data.length; i++) {
+    //         console.log(data[i].dataValues.breed)
+    //         if(newBreed.indexOf(data[i].dataValues.breed) === -1) {
+    //             newBreed.push(data[i].dataValues.breed)
+    //         }
+    //     }
+    //     res.render("breeder", {
+    //         dog: newBreed
+    //     })
+    // })
 })
 
 // SHOW WHAT BREED USER SELECTED //
@@ -22,7 +47,9 @@ router.get("/breeds/:breed", function (req, res) {
     db.Result.findAll({
         where: {
             breed: req.params.breed
-            }
+            },
+            attributes: ['city', 'breed',[db.sequelize.fn('count', db.sequelize.col('city')), 'cnt']],
+            group: ['city']
         }).then(function (data) {
             res.json(data)
         })
@@ -31,10 +58,13 @@ router.get("/breeds/:breed", function (req, res) {
 // SHOW WHAT LOCATION USER SELECTED //
 router.get("/location/:location", function (req, res) {
     console.log(req.params.location);
+    // https://stackoverflow.com/questions/22627258/how-does-group-by-works-in-sequelize
     db.Result.findAll({
         where: {
             city: req.params.location
-            }
+            },
+        attributes: ['breed', 'city',[db.sequelize.fn('count', db.sequelize.col('breed')), 'cnt']],
+        group: ['breed']
         }).then(function (data) {
             res.json(data)
         })

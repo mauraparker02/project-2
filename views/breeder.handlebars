@@ -14,7 +14,7 @@
                 <label>Choose a Breed:</label>
                 <select class="uk-select" id="pickBreed">
                     {{#each dog}}
-                    <option>{{dataValues.breed}}</option>
+                    <option>{{this.breed}}</option>
                     {{/each}}
                 </select>
             </div>
@@ -28,6 +28,7 @@
                 <thead>
                     <tr>
                         <th>City</th>
+                        <th>Count</th>
                     </tr>
                 </thead>
                 <tbody id="breedTable">
@@ -45,8 +46,8 @@
             <div class="uk-margin">
                 <label>Choose a City:</label>
                 <select class="uk-select" id="pickCity">
-                    {{#each dog}}
-                    <option>{{dataValues.city}}</option>
+                    {{#each location}}
+                    <option>{{this.city}}</option>
                     {{/each}}
                 </select>
             </div>
@@ -60,6 +61,7 @@
                 <thead>
                     <tr>
                         <th>Breed</th>
+                        <th>Count</th>
                     </tr>
                 </thead>
                 <tbody id="cityTable">
