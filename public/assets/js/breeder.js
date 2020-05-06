@@ -1,10 +1,9 @@
-const breedList = [];
-const cityList = [];
+// const breedList = [];
+// const cityList = [];
 
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-const result = words.filter(word => word.length > 6);
+// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+// const result = words.filter(word => word.length > 6);
 
-$(function(){
 $(function() {
     $("#add-shelter").on("click", function(e) {
         e.preventDefault();
@@ -72,7 +71,8 @@ $(function() {
             $("#breedTable").empty();
             for(i=0; i<data.length; i++) {
                 console.log(data[i].city)
-                $("#breedTable").append($("<tr>").append($("<td>").text(data[i].city)));
+                // $("#breedTable").append($("<tr>").append($("<td>").text(data[i].city)));
+                $("#breedTable").append($("<tr>").append($("<td>").text(data[i].city)).append($("<td>").text(data[i].cnt)));
             }
             // location.reload();
             }
@@ -91,7 +91,7 @@ $(function() {
             $("#cityTable").empty();
             for(i=0; i<data.length; i++) {
                 console.log(data[i].breed)
-                $("#cityTable").append($("<tr>").append($("<td>").text(data[i].breed)));
+                $("#cityTable").append($("<tr>").append($("<td>").text(data[i].breed)).append($("<td>").text(data[i].cnt)));
             }
             // location.reload();
             }
