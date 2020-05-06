@@ -49,23 +49,26 @@ router.post("/api/shelterDogs", function(req, res) {
         },
         include: [db.ShelterDogs]
     }).then(function(data) {
-        res.json({ id: data[0].dataValues.id });
         let state = [];
-
-        for (let i = 0; i < data[0].dataValues.ShelterDogs.length; i++) {
-            if(data[0].dataValues.ShelterDogs[i].dogName === req.body.dogName && data[0].dataValues.ShelterDogs[i].breed === req.body.breed){
-                state.push(req.body.dogName);
+        if(data.length === 0) {
+            return res.json({id:-1});
+        } else {
+            res.json({ id: data[0].dataValues.id });
+            for (let i = 0; i < data[0].dataValues.ShelterDogs.length; i++) {
+                if(data[0].dataValues.ShelterDogs[i].dogName === req.body.dogName && data[0].dataValues.ShelterDogs[i].breed === req.body.breed){
+                    state.push(req.body.dogName);
+                }
             }
-        }
-
-        if(data.length === 1 && state.length === 0) {
-            db.ShelterDogs.create({
-                dogName: req.body.dogName,
-                breed: req.body.breed,
-                ShelterId: data[0].id
-            }).then(function(response) {
-                console.log("dog created");
-            });
+    
+            if(state.length === 0) {
+                db.ShelterDogs.create({
+                    dogName: req.body.dogName,
+                    breed: req.body.breed,
+                    ShelterId: data[0].id
+                }).then(function(response) {
+                    console.log("dog created");
+                });
+            }
         }
     });
 });
