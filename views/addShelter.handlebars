@@ -3,14 +3,37 @@
             <h2>Add or select a Shelter</h2>
 
             <label>Shelter Name:</label>
-            <textarea class="uk-textarea" id="shelter-name"></textarea>
+            <input class="uk-input" id="shelter-name"></input>
+
+            <label>Shelter City:</label>
+            <input class="uk-input" id="city-name"></input>
+
+            <button class="uk-button uk-button-primary" id="find-add">Find/Add Shelter</button>
+            <div id="shelter-error"></div>
 
             <label>Dog Name:</label>
-            <input class="uk-input" id="dog-name"></input>
+            <input class="uk-input dog-info" id="dog-name"></input>
 
             <label>Dog Breed:</label>
-            <input class="uk-input" id="dog-breed"></input>
+            <input class="uk-input dog-info" id="dog-breed"></input>
 
-            <button class="uk-button uk-button-primary" id="add-submit">Submit</button>
+            <button class="uk-button uk-button-primary" id="add-dog">Add Dog</button>
+            <div id="dog-error"></div>
         </form>
+
+        <div id="shelter-dogs-display">
+            <table class="uk-table">
+                <caption id="title"></caption>
+                <thead>
+                    <tr>
+                        <th>Dog Name</th>
+                        <th>Dog Breed</th>
+                        <th>Adopted</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+
+                </tbody>
+            </table>
+        </div>
     </div>
