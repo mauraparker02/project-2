@@ -1,17 +1,16 @@
 $(function() {
-    let shelterName = $("#shelter-name");
+    const shelterName = $("#shelter-name");
     const shelterCity = $("#city-name");
     const dogName = $("#dog-name");
     const dogBreed = $("#dog-breed");
 
 
 
-
-    $("#add-submit").on("click", function(e) {
+    $("#find-add").on("click", function(e) {
         e.preventDefault();
-        let shelter = {
-            name: shelterName.val(),
-            city: shelterCity.val()
+        const shelter = {
+            name: shelterName.val().trim(),
+            city: shelterCity.val().trim(),
         };
         // console.log(shelterName);
         // console.log(shelter);
@@ -19,8 +18,44 @@ $(function() {
         $.ajax("/api/shelters", {
             type: "POST",
             data: shelter
-        }).then(function() {
-            location.reload();
+        }).then(function(res) {
+            console.log(res);
+
+            const id = res.id;
+
+            $.ajax("/api/shelters/" + id, {
+                type: "GET"
+            }).then(function(data) {
+                // location.reload();
+                console.log("showing table");
+                console.log(data);
+                
+                $("#title").append($("<h3>").text(`${data.name} in ${data.city}`));
+                for (let i = 0; i < data.ShelterDogs.length; i++) {
+                    // const $row = $("<tr>");
+                    $("#table-body").append($("<tr>").append($("<td>").text(data.ShelterDogs[i].dogName)).append($("<td>").text(data.ShelterDogs[i].breed)));
+                }
+            });
+        });
+    });
+
+    $("#add-dog").on("click", function(e) {
+        e.preventDefault();
+        const dog = {
+            name: shelterName.val().trim(),
+            city: shelterCity.val().trim(),
+            dogName: dogName.val().trim(),
+            breed: dogBreed.val().trim(),
+        };
+
+        $.ajax("/api/shelterDogs", {
+            type: "POST",
+            data: dog
+        }).then(function(res) {
+            // location.reload();
+            dogName.empty();
+            dogBreed.empty();
+            res.end();
         });
     });
 });

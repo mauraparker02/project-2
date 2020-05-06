@@ -20,7 +20,7 @@ const routes = require("./routes/api-routes.js");
 
 app.use(routes);
 
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App now listening at http://localhost:" + PORT);
   });

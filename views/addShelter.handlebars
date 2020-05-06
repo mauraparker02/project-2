@@ -8,12 +8,43 @@
             <label>Shelter City:</label>
             <input class="uk-input" id="city-name"></input>
 
+            <button class="uk-button uk-button-primary" id="find-add">Find/Add Shelter</button>
+
             <label>Dog Name:</label>
             <input class="uk-input" id="dog-name"></input>
 
             <label>Dog Breed:</label>
             <input class="uk-input" id="dog-breed"></input>
 
-            <button class="uk-button uk-button-primary" id="add-submit">Submit</button>
+            <button class="uk-button uk-button-primary" id="add-dog">Add Dog</button>
         </form>
+
+        <div id="shelter-dogs-display">
+            <table class="uk-table">
+                <caption id="title"></caption>
+                <thead>
+                    <tr>
+                        <th>Dog Name</th>
+                        <th>Dog Breed</th>
+                        <th>Adopted</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    {{!-- <tr> --}}
+                        {{!-- <td>Table Data</td>
+                        <td>Table Data</td> --}}
+                        {{!-- <td>Table Data</td> --}}
+                    {{!-- </tr> --}}
+                    {{!-- <tr> --}}
+                        {{!-- <td>Table Data</td>
+                        <td>Table Data</td> --}}
+                        {{!-- <td>Table Data</td> --}}
+                    {{!-- </tr> --}}
+                </tbody>
+            </table>
+        </div>
     </div>
+
+    <script>
+        console.log(name);
+    </script>
