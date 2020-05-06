@@ -4,13 +4,6 @@ CREATE DATABASE shelterHelper;
 
 USE shelterHelper;
 
-CREATE TABLE Results(
-id int NOT NULL AUTO_INCREMENT,
-breed varchar(255) NOT NULL,
-city varchar(255) NOT NULL,
-PRIMARY KEY (id)
-);
-
 INSERT INTO results (breed, city, createdAt, updatedAt)
 VALUES ("American Bully", "Chicago", "2020-04-15", "2020-04-15");
 

@@ -1,6 +1,12 @@
-const breedPick = $(".dogType");
-
-$(function(){
+$(function() {
+    $("#add-shelter").on("click", function(e) {
+        e.preventDefault();
+        $.ajax("/add", {
+            type: "GET"
+        }).then(function() {
+            location.assign("/add");
+        });
+    });
 
     $("#city").css("display", "none");
     $("#breed").css("display", "none");
@@ -84,5 +90,4 @@ $(function(){
             }
         );
     });
-
-}); 
+});
