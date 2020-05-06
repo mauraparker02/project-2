@@ -5,89 +5,65 @@
     <button class="uk-button uk-button-primary" id="byCity">City</button>
 </div>
 
-<br>
-<br>
-<br>
-
-{{!-- IF BY BREED --}}
+{{!-- IF SORTED BY BREED --}}
 <div id="breed">
-<div class="uk-container">
-    <form>
-        <div class="uk-margin">
-            <label>Breed:</label>
-            <select class="uk-select dogType" id="pickBreed">
-                {{#each dog}}
-                <option>{{dataValues.breed}}</option>
-                {{!-- req.params.breed?? --}}
-                {{/each}}
-            </select>
+    <div class="uk-container">
+        <form>
+            <div class="uk-margin">
+                <label>Choose a Breed:</label>
+                <select class="uk-select" id="pickBreed">
+                    {{#each dog}}
+                    <option>{{dataValues.breed}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <button class="uk-button uk-button-primary" id="searchBreed">Search</button>
+        </form>
+    </div>
+
+    <div id="breed-table">
+        <div class="uk-container">
+            <table class="uk-table uk-table-divider">
+                <thead>
+                    <tr>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody id="breedTable">
+                </tbody>
+            </table>
         </div>
-        <button class="uk-button uk-button-primary" id="searchBreed">Search</button>
-    </form>
-</div>
-</div>
-
-<div id="breed-table">
-<div class="uk-container">
-     <table class="uk-table uk-table-divider">
-            <thead>
-                <tr>
-                    <th>City</th>
-                    <th>Hits</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each dog}}
-                <tr> 
-                    <td>{{dataValues.city}}</td>
-                    <td>Number of Hits for Breed</td>
-                </tr>
-                {{/each}}
-            </tbody>
-    </table>
-</div>
+    </div>
 </div>
 
 
-<br>
-<br>
-<br>
-
-{{!-- IF BY CITY --}}
+{{!-- IF SORTED BY CITY --}}
 <div id="city">
-<div class="uk-container">
-    <form>
-        <div class="uk-margin">
-            <label>City:</label>
-            <select class="uk-select">
-                {{#each dog}}
-                <option>{{dataValues.city}}</option>
-                {{/each}}
-            </select>
+    <div class="uk-container">
+        <form>
+            <div class="uk-margin">
+                <label>Choose a City:</label>
+                <select class="uk-select" id="pickCity">
+                    {{#each dog}}
+                    <option>{{dataValues.city}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <button class="uk-button uk-button-primary" id="searchCity">Search</button>
+        </form>
+    </div>
+
+    <div id="city-table">
+        <div class="uk-container">
+            <table class="uk-table uk-table-divider">
+                <thead>
+                    <tr>
+                        <th>Breed</th>
+                    </tr>
+                </thead>
+                <tbody id="cityTable">
+                </tbody>
+            </table>
         </div>
-        <button class="uk-button uk-button-primary">Search</button>
-    </form>
+    </div>
 </div>
-</div>
-
-<div id="city-table">
-<div class="uk-container">
-     <table class="uk-table uk-table-divider">
-            <thead>
-                <tr>
-                    <th>Breed</th>
-                    <th>Hits</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each dog}}
-                <tr> 
-                    <td>{{dataValues.breed}}</td>
-                    <td>Number of Hits for Breed</td>
-                </tr>
-                {{/each}}
-            </tbody>
-    </table>
-</div>
-</div>
-
