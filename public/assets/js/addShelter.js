@@ -19,20 +19,18 @@ $(function() {
             type: "POST",
             data: shelter
         }).then(function(res) {
-            console.log(res);
+            // console.log(res);
 
             const id = res.id;
 
             $.ajax("/api/shelters/" + id, {
                 type: "GET"
             }).then(function(data) {
-                // location.reload();
-                console.log("showing table");
-                console.log(data);
+                $("#title").empty();
+                $("#table-body").empty();
                 
                 $("#title").append($("<h3>").text(`${data.name} in ${data.city}`));
                 for (let i = 0; i < data.ShelterDogs.length; i++) {
-                    // const $row = $("<tr>");
                     $("#table-body").append($("<tr>").append($("<td>").text(data.ShelterDogs[i].dogName)).append($("<td>").text(data.ShelterDogs[i].breed)));
                 }
             });
@@ -53,9 +51,25 @@ $(function() {
             data: dog
         }).then(function(res) {
             // location.reload();
-            dogName.empty();
-            dogBreed.empty();
-            res.end();
+            const id = res.id;
+            // console.log(res);
+
+            $.ajax("/api/shelters/" + id, {
+                type: "GET"
+            }).then(function(data) {
+                // dogName.val().empty();
+                // dogBreed.val().empty();
+                // dogName.reset();
+                // dogBreed.val() = "";
+                $("#title").empty();
+                $("#table-body").empty();
+                
+                $("#title").append($("<h3>").text(`${data.name} in ${data.city}`));
+                for (let i = 0; i < data.ShelterDogs.length; i++) {
+                    $("#table-body").append($("<tr>").append($("<td>").text(data.ShelterDogs[i].dogName)).append($("<td>").text(data.ShelterDogs[i].breed)));
+                }
+            });
+            
         });
     });
 });
