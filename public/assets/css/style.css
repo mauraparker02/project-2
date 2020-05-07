@@ -2,6 +2,27 @@
     text-transform: capitalize;
 }
 
+.uk-button {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #4C8492;
+    font-size: 17px;
+    color: white;
+    text-transform: capitalize;
+    border-color: #4C8492;
+    border-radius: 8px;
+}
+
+.title {
+    font-family: 'Jost', sans-serif;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+*+h3, .sub-text{
+    font-family: 'Noto Sans', sans-serif;
+    margin-top: -11px;
+}
+
 .uk-navbar-nav>li>a {
     color: black;
     font-family: 'Noto Sans', sans-serif;
