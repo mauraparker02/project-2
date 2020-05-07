@@ -2,6 +2,26 @@
     text-transform: capitalize;
 }
 
+/* CONSISTENT STYLE */
+.uk-button {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #4C8492;
+    color: white;
+    text-transform: capitalize;
+    border-color: #4C8492;
+    border-radius: 8px;
+}
+
+.title {
+    font-family: 'Jost', sans-serif;
+}
+
+*+h3, .sub-text{
+    font-family: 'Noto Sans', sans-serif;
+    margin-top: -11px;
+}
+
+/* NAVBAR STYLE */
 .uk-navbar-nav>li>a {
     color: black;
     font-family: 'Noto Sans', sans-serif;
@@ -32,4 +52,14 @@
 #nav-logo {
     margin-left: 1rem;
     padding-left: 0.8rem;
+}
+
+/* USER HANDLEBAR */
+.user-title {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.user-text {
+    text-align: center;
 }
