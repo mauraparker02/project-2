@@ -112,7 +112,6 @@ router.post("/api/shelterDogs", function(req, res) {
         if(data.length === 0) {
             return res.json({id:-1});
         } else {
-            res.json({ id: data[0].dataValues.id });
             for (let i = 0; i < data[0].dataValues.ShelterDogs.length; i++) {
                 if(data[0].dataValues.ShelterDogs[i].dogName === req.body.dogName && data[0].dataValues.ShelterDogs[i].breed === req.body.breed){
                     state.push(req.body.dogName);
@@ -126,6 +125,7 @@ router.post("/api/shelterDogs", function(req, res) {
                     ShelterId: data[0].id
                 }).then(function(response) {
                     console.log("dog created");
+                    res.json({ id: data[0].dataValues.id });
                 });
             }
         }

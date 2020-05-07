@@ -11,6 +11,7 @@ $(function () {
             city: shelterCity.val().trim(),
         };
         if (shelterName.val() === "" || shelterCity.val() === "") {
+            $("#shelter-error").empty();
             $("#shelter-error").append($("<p>").text("Shelter name and city cannot be blank!"));
             setTimeout(function () {
                 $("#shelter-error").empty();
@@ -30,7 +31,7 @@ $(function () {
 
                     $("#title").append($("<h3>").text(`${data.name} in ${data.city}`));
                     for (let i = 0; i < data.ShelterDogs.length; i++) {
-                        $("#table-body").append($("<tr>").append($("<td>").text(data.ShelterDogs[i].dogName)).append($("<td>").text(data.ShelterDogs[i].breed)));
+                        $("#table-body").append($("<tr>")).append($("<td>").text(data.ShelterDogs[i].dogName)).append($("<td>").text(data.ShelterDogs[i].breed)).append($("<button>").text("Adopted").addClass("delete-btn"));
                     }
                 });
             });
@@ -47,6 +48,7 @@ $(function () {
         };
 
         if (shelterName.val() === "" || shelterCity.val() === "" || dogName.val() === "" || dogBreed.val() === "") {
+            $("#dog-error").empty();
             $("#dog-error").append($("<p>").text("All fields must have a value!"));
             setTimeout(function () {
                 $("#dog-error").empty();
@@ -63,15 +65,18 @@ $(function () {
                     }).then(function (data) {
                         $("#title").empty();
                         $("#table-body").empty();
-                        document.getElementById("dog-name").value = "";
-                        document.getElementById("dog-breed").value = "";
+
 
                         $("#title").append($("<h3>").text(`${data.name} in ${data.city}`));
                         for (let i = 0; i < data.ShelterDogs.length; i++) {
-                            $("#table-body").append($("<tr>").append($("<td>").text(data.ShelterDogs[i].dogName)).append($("<td>").text(data.ShelterDogs[i].breed)));
+                            $("#table-body").append($("<tr>")).append($("<td>").text(data.ShelterDogs[i].dogName)).append($("<td>").text(data.ShelterDogs[i].breed)).append($("<button>").text("Adopted").addClass("delete-btn"));
                         }
+
+                        document.getElementById("dog-name").value = "";
+                        document.getElementById("dog-breed").value = "";
                     });
                 } else {
+                    $("#dog-error").empty();
                     $("#dog-error").append($("<p>").text("Shelter not found, must create one first!"));
                     setTimeout(function () {
                         $("#dog-error").empty();
@@ -79,5 +84,10 @@ $(function () {
                 }
             });
         }
+    });
+
+    $(".delete-btn").on("click", function(e) {
+        e.preventDefault();
+        console.log("clicked")
     });
 });
