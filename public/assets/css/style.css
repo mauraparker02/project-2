@@ -141,6 +141,11 @@ label, .table-title {
 
 .uk-table .addShelter-table {
     text-align: center;
+
+}
+
+.caption-title {
+    margin-bottom: 2rem;
 }
 
 #shelter-dogs-display {
