@@ -1,3 +1,35 @@
 .cap {
     text-transform: capitalize;
 }
+
+.uk-navbar-nav>li>a {
+    color: black;
+    font-family: 'Noto Sans', sans-serif;
+    text-transform: capitalize;
+    transition: .1s ease-in-out;
+    transition-property: color,background-color;
+}
+
+.uk-navbar-nav>li>a:hover{
+    color:#4C8492;
+}
+
+.uk-navbar-container {
+    padding-right: 3rem;
+}
+
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    background-color: #F7DC95;
+}
+
+#navbrand {
+    font-family: 'Jost', sans-serif;
+    color: #4C8492;
+    font-size: 20px !important;
+    padding-left: 1rem;
+}
+
+#nav-logo {
+    margin-left: 1rem;
+    padding-left: 0.8rem;
+}
