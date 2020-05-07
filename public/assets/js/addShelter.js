@@ -7,8 +7,8 @@ $(function () {
     $("#find-add").on("click", function (e) {
         e.preventDefault();
         const shelter = {
-            name: shelterName.val().trim(),
-            city: shelterCity.val().trim(),
+            name: shelterName.val().toLowerCase().trim(),
+            city: shelterCity.val().toLowerCase().trim(),
         };
         if (shelterName.val() === "" || shelterCity.val() === "") {
             $("#shelter-error").empty();
@@ -29,9 +29,9 @@ $(function () {
                     $("#title").empty();
                     $("#table-body").empty();
 
-                    $("#title").append($("<h3>").text(`${data.name} in ${data.city}`));
+                    $("#title").append($("<h3>").addClass("cap").text(`${data.name} in ${data.city}`));
                     for (let i = 0; i < data.ShelterDogs.length; i++) {
-                        $("#table-body").append($("<tr>")).append($("<td>").text(data.ShelterDogs[i].dogName)).append($("<td>").text(data.ShelterDogs[i].breed)).append($("<button>").text("Adopted").addClass("delete-btn"));
+                        $("#table-body").append($("<tr>")).append($("<td>").addClass("cap").text(data.ShelterDogs[i].dogName)).append($("<td>").addClass("cap").text(data.ShelterDogs[i].breed)).append($("<button>").text("Adopted").addClass("delete-btn"));
                     }
                 });
             });
@@ -41,10 +41,10 @@ $(function () {
     $("#add-dog").on("click", function (e) {
         e.preventDefault();
         const dog = {
-            name: shelterName.val().trim(),
-            city: shelterCity.val().trim(),
-            dogName: dogName.val().trim(),
-            breed: dogBreed.val().trim(),
+            name: shelterName.val().toLowerCase().trim(),
+            city: shelterCity.val().toLowerCase().trim(),
+            dogName: dogName.val().toLowerCase().trim(),
+            breed: dogBreed.val().toLowerCase().trim(),
         };
 
         if (shelterName.val() === "" || shelterCity.val() === "" || dogName.val() === "" || dogBreed.val() === "") {
@@ -67,9 +67,9 @@ $(function () {
                         $("#table-body").empty();
 
 
-                        $("#title").append($("<h3>").text(`${data.name} in ${data.city}`));
+                        $("#title").append($("<h3>").addClass("cap").text(`${data.name} in ${data.city}`));
                         for (let i = 0; i < data.ShelterDogs.length; i++) {
-                            $("#table-body").append($("<tr>")).append($("<td>").text(data.ShelterDogs[i].dogName)).append($("<td>").text(data.ShelterDogs[i].breed)).append($("<button>").text("Adopted").addClass("delete-btn"));
+                            $("#table-body").append($("<tr>")).append($("<td>").addClass("cap").text(data.ShelterDogs[i].dogName)).append($("<td>").addClass("cap").text(data.ShelterDogs[i].breed)).append($("<button>").text("Adopted").addClass("delete-btn"));
                         }
 
                         document.getElementById("dog-name").value = "";
@@ -90,4 +90,8 @@ $(function () {
         e.preventDefault();
         console.log("clicked")
     });
+
+    // function firstLetCap(str) {
+    //     let splitStr = str.split
+    // }
 });

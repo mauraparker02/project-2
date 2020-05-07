@@ -119,7 +119,7 @@ $(function() {
     const city = $("#city-location");
     const userInfo = {
       // breed: "American Bully",
-      city: city.val().trim()
+      city: city.val().toLowerCase().trim()
     }
     $.ajax("/api/results", {
       type: "POST",
