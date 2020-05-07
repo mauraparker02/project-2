@@ -1,6 +1,31 @@
 .cap {
     text-transform: capitalize;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
+
+/* CONSISTENT STYLE */
+.uk-button {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #4C8492;
+    font-size: 17px;
+    color: white;
+    text-transform: capitalize;
+    border-color: #4C8492;
+    border-radius: 8px;
+}
+
+.title {
+    font-family: 'Jost', sans-serif;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+*+h3, .sub-text{
+    font-family: 'Noto Sans', sans-serif;
+    margin-top: -11px;
+}
+
 
 .uk-navbar-nav>li>a {
     color: black;
@@ -32,4 +57,40 @@
 #nav-logo {
     margin-left: 1rem;
     padding-left: 0.8rem;
+}
+
+/* BREEDER HANDLEBAR */
+.breeder-text {
+    text-align: center;
+}
+
+#byBreed, #byCity {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#byBreed:hover, #byCity:hover, #searchCity:hover, #searchBreed:hover {
+    background-color: #F7DC95;
+    border-color: #F7DC95;
+    color: black;
+}
+
+#byCity {
+    margin-left: 1rem;
+}
+
+#searchCity, #searchBreed{
+    margin-bottom: 3rem;
+}
+
+.center {
+    text-align: center;
+}
+
+label, .table-title {
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #4C8492 !important;
 }

@@ -15,11 +15,15 @@
 </nav> 
 
 <div class="uk-container">
-    <h1>Find Popular Dog Breeds in Different Cities</h1>
-    <button class="uk-button uk-button-primary" id="add-shelter">Add Shelter/Dog</button>
-    <h5>Search by...</h5>
+    <h1 class="title">Dog Breed Data in Different Cities</h1>
+    <h4 class="sub-text breeder-text">Search for the data based on either breed or location.</h4>
+    <p class="center">
     <button class="uk-button uk-button-primary" id="byBreed">Breed</button>
     <button class="uk-button uk-button-primary" id="byCity">City</button>
+    </p>
+    {{!-- <button class="uk-button uk-button-primary" id="add-shelter">Add Shelter/Dog</button> --}}
+   
+  
 </div>
 
 {{!-- IF SORTED BY BREED --}}
@@ -43,8 +47,8 @@
             <table class="uk-table uk-table-divider">
                 <thead>
                     <tr>
-                        <th>City</th>
-                        <th>Count</th>
+                        <th class="table-title">City</th>
+                        <th class="table-title">Count</th>
                     </tr>
                 </thead>
                 <tbody id="breedTable">
@@ -76,8 +80,8 @@
             <table class="uk-table uk-table-divider">
                 <thead>
                     <tr>
-                        <th>Breed</th>
-                        <th>Count</th>
+                        <th class="table-title">Breed</th>
+                        <th class="table-title">Count</th>
                     </tr>
                 </thead>
                 <tbody id="cityTable">
