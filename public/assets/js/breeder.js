@@ -15,7 +15,7 @@ $(function() {
     });
 
     $("#city").css("display", "none");
-    $("#breed").css("display", "none");
+    // $("#breed").css("display", "none");
 
     // SHOW BREED DIV ON CLICK //
     $("#byBreed").on("click", function(event){
