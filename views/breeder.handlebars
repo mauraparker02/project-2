@@ -1,3 +1,19 @@
+<nav class="uk-navbar-container uk-margin" uk-navbar="mode: click">
+    <div class="uk-navbar-left">
+        <img src="/assets/images/logo-nav.png" id="nav-logo" width="50" height="50">
+        <ul class="uk-navbar-nav">
+        <li id="navbrand">Shelter Helper</li>
+        </ul>
+    </div>
+    <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+            <li><a href="/adopt">Adopt</a></li>
+            <li><a href="/shelterHelper/home">Shelter</a></li>
+            <li><a href="/add">Add Shelter</a></li>
+        </ul>
+    </div>
+</nav> 
+
 <div class="uk-container">
     <h1>Find Popular Dog Breeds in Different Cities</h1>
     <button class="uk-button uk-button-primary" id="add-shelter">Add Shelter/Dog</button>
@@ -9,7 +25,7 @@
 {{!-- IF SORTED BY BREED --}}
 <div id="breed">
     <div class="uk-container">
-        <form>
+     <form>
             <div class="uk-margin">
                 <label>Choose a Breed:</label>
                 <select class="uk-select cap" id="pickBreed">
