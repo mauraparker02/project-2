@@ -153,4 +153,14 @@ router.post("/api/results", function(req, res) {
     });
 });
 
+router.delete("/api/shelterDogs/:id", function(req, res) {
+    db.ShelterDogs.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then(function(data) {
+        res.json(data);
+    });
+});
+
 module.exports = router;
