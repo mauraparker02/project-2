@@ -143,4 +143,14 @@ router.get("/api/shelters/:id", function(req, res) {
     });
 });
 
+router.post("/api/results", function(req, res) {
+    // console.log(req.body);
+    db.Result.create({
+        breed: "American Bully",
+        city: req.body.city
+    }).then(function(response) {
+        res.end();
+    });
+});
+
 module.exports = router;
