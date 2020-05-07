@@ -46,11 +46,6 @@
 }
 
 /* INDEX HANDLEBAR */
-.mobile {
-    display: none;
- 
-}
-
 #landing-title {
     font-family: 'Jost', sans-serif;
 }
@@ -84,12 +79,3 @@
 #helpShelter {
     margin-left: 1rem;
 }
-
-/* @media only screen and (max-width: 600px) {
-    .web {
-        display: none;
-    }
-    .mobile {
-      display: block;
-    }
-  } */
