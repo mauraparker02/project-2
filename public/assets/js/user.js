@@ -112,7 +112,23 @@ console.log(type4Breed)
   //use math.random to select 3 random dogs from that array 
 
   // Function to build the quiz in the quizstructure: 
-
+$(function() {
+  $("#find-breed").on("click", function(e) {
+    e.preventDefault();
+    // console.log("clicked")
+    const city = $("#city-location");
+    const userInfo = {
+      // breed: "American Bully",
+      city: city.val().toLowerCase().trim()
+    }
+    $.ajax("/api/results", {
+      type: "POST",
+      data: userInfo
+    }).then(function(data) {
+      console.log("saved");
+    });
+  });
+});
 
 
 
