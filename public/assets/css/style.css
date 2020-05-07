@@ -2,6 +2,17 @@
     text-transform: capitalize;
 }
 
+/* CONSISTENT STYLE */
+.uk-button {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #4C8492;
+    color: white;
+    text-transform: capitalize;
+    border-color: #4C8492;
+    border-radius: 8px;
+}
+
+/* NAVBAR */
 .uk-navbar-nav>li>a {
     color: black;
     font-family: 'Noto Sans', sans-serif;
@@ -33,3 +44,52 @@
     margin-left: 1rem;
     padding-left: 0.8rem;
 }
+
+/* INDEX HANDLEBAR */
+.mobile {
+    display: none;
+ 
+}
+
+#landing-title {
+    font-family: 'Jost', sans-serif;
+}
+
+#shelter-background {
+    width: 100%;
+    height: 100%;
+
+}
+
+.main-text {
+    padding-left: 4rem;
+}
+
+*+h3, #landing-text {
+    font-family: 'Noto Sans', sans-serif;
+    margin-top: -11px;
+}
+
+#goAdopt, #helpShelter {
+    margin-top: 2rem;
+    font-size: 17px;
+}
+
+#goAdopt:hover, #helpShelter:hover {
+    background-color: white;
+    border-color: white;
+    color: #4C8492;
+}
+
+#helpShelter {
+    margin-left: 1rem;
+}
+
+/* @media only screen and (max-width: 600px) {
+    .web {
+        display: none;
+    }
+    .mobile {
+      display: block;
+    }
+  } */
