@@ -12,6 +12,15 @@
     border-radius: 8px;
 }
 
+.title {
+    font-family: 'Jost', sans-serif;
+}
+
+*+h3, .sub-text{
+    font-family: 'Noto Sans', sans-serif;
+    margin-top: -11px;
+}
+
 /* NAVBAR */
 .uk-navbar-nav>li>a {
     color: black;
