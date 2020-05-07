@@ -17,7 +17,7 @@
 
 .title {
     font-family: 'Jost', sans-serif;
-    margin-top: 2rem;
+    margin-top: 3rem;
     text-align: center;
 }
 
@@ -69,7 +69,7 @@
     margin-bottom: 2rem;
 }
 
-#byBreed:hover, #byCity:hover {
+#byBreed:hover, #byCity:hover, #searchCity:hover, #searchBreed:hover {
     background-color: #F7DC95;
     border-color: #F7DC95;
     color: black;
