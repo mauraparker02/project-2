@@ -14,4 +14,9 @@ $(function() {
         e.preventDefault();
         location.href="/shelterHelper/home";
     });
+
+    $("#addShelter").on("click", function(e) {
+        e.preventDefault();
+        location.href="/add";
+    });
 });
