@@ -15,6 +15,21 @@ $(function () {
     let selected2 = $('input[name="question2"]:checked').val();
     console.log(selected2)
     counter(selected2)
+    let selected3 = $('input[name="question3"]:checked').val();
+    console.log(selected3)
+    counter(selected3)
+    let selected4 = $('input[name="question4"]:checked').val();
+    console.log(selected4)
+    counter(selected4)
+    let selected5 = $('input[name="question5"]:checked').val();
+    console.log(selected5)
+    counter(selected5)
+    let selected6 = $('input[name="question6"]:checked').val();
+    console.log(selected6)
+    counter(selected6)
+    let selected7 = $('input[name="question7"]:checked').val();
+    console.log(selected7)
+    counter(selected7)
 
   //at the end
   if ((type1 > type2) && (type1 > type3) && (type1 > type4)) {
