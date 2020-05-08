@@ -77,7 +77,7 @@ router.get("/adopt", function (req, res) {
 router.get("/quiz", function (req, res){
     const allQuestions= {
         questions: [ {
-            question: "Pick an outdoor activity",
+            question: "Pick an outdoor activity:",
             answers: {
                 a: "Gardening", //all answers that are a should correlate with data from array type1 
                 b: "Boating", //all answers that are a should correlate with data from array type2
@@ -88,16 +88,72 @@ router.get("/quiz", function (req, res){
             
         },
         {
-            question: "Pick an outdoor activity",
+            question: "Pick a type of bar to hang out at:",
             answers: {
-                a: "Gardening", //all answers that are a should correlate with data from array type1 
-                b: "Boating", //all answers that are a should correlate with data from array type2
-                c: "Hiking", //all answers that are a should correlate with data from array type3
-                d: "Playing a competitive sport", //all answers that are a should correlate with data from array type4 
+                a: "A local hole in the wall", //all answers that are a should correlate with data from array type1 
+                b: "A speakeasy", //all answers that are a should correlate with data from array type2
+                c: "A brewrey", //all answers that are a should correlate with data from array type3
+                d: "A nightclub", //all answers that are a should correlate with data from array type4 
             },
             key: "2"
             
-        },]
+        },
+        {
+            question: "Pick a hobby:",
+            answers: {
+                a: "Reading", //all answers that are a should correlate with data from array type1 
+                b: "Golfing", //all answers that are a should correlate with data from array type2
+                c: "Playing the piano", //all answers that are a should correlate with data from array type3
+                d: "Snowboarding", //all answers that are a should correlate with data from array type4 
+            },
+            key: "3"
+            
+        },
+        {
+            question: "Pick a fast food chain:",
+            answers: {
+                a: "Panera", //all answers that are a should correlate with data from array type1 
+                b: "Shake Shack", //all answers that are a should correlate with data from array type2
+                c: "Waffle House", //all answers that are a should correlate with data from array type3
+                d: "Jimmy John's", //all answers that are a should correlate with data from array type4 
+            },
+            key: "4"
+            
+        },
+        {
+            question: "Pick a household chore:",
+            answers: {
+                a: "Yard work", //all answers that are a should correlate with data from array type1 
+                b: "Vaccuming", //all answers that are a should correlate with data from array type2
+                c: "Laundry", //all answers that are a should correlate with data from array type3
+                d: "Washing dishes", //all answers that are a should correlate with data from array type4 
+            },
+            key: "5"
+            
+        },
+        {
+            question: "Pick a fear:",
+            answers: {
+                a: "Loud Noises", //all answers that are a should correlate with data from array type1 
+                b: "Vermin", //all answers that are a should correlate with data from array type2
+                c: "Claustrophobia", //all answers that are a should correlate with data from array type3
+                d: "Failure", //all answers that are a should correlate with data from array type4 
+            },
+            key: "6"
+            
+        },
+        {
+            question: "Pick a snack:",
+            answers: {
+                a: "Hummus", //all answers that are a should correlate with data from array type1 
+                b: "A charcuterie board", //all answers that are a should correlate with data from array type2
+                c: "Beef Jerky", //all answers that are a should correlate with data from array type3
+                d: "Nachos", //all answers that are a should correlate with data from array type4 
+            },
+            key: "7"
+            
+        }
+    ]
     }
     res.render("user", allQuestions)
 })
