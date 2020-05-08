@@ -13,7 +13,6 @@ $(function () {
   $("#find-breed").on("click", function (e) {
     e.preventDefault();
     if (city.val() === "") {
-      console.log("empty")
       locationError.empty();
       locationError.append($("<p>").text("Location input cannot be blank!"));
       setTimeout(function () {
