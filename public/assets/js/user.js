@@ -101,12 +101,12 @@ $(function () {
 
   function renderDog(dog) {
     sugDiv.empty();
-    sugDiv.append($("<h3>").text(dog.name))
-    sugDiv.append($("<h4>").text(dog.breed_group))
-    sugDiv.append($("<h4>").text(dog.bred_for))
-    sugDiv.append($("<h4>").text(dog.life_span))
-    sugDiv.append($("<h4>").text(dog.height.imperial))
-    sugDiv.append($("<h4>").text(dog.weight.imperial))
+    sugDiv.append($("<h3>").text(`Breed: ${dog.name}`))
+    sugDiv.append($("<h4>").text(`Breed Group: ${dog.breed_group}`))
+    sugDiv.append($("<h4>").text(`Dog Bred For: ${dog.bred_for}`))
+    sugDiv.append($("<h4>").text(`Life Span: ${dog.life_span}`))
+    sugDiv.append($("<h4>").text(`Avgerage Height: ${dog.height.imperial}`))
+    sugDiv.append($("<h4>").text(`Average Weight: ${dog.weight.imperial}`))
 
     const userInfo = {
       breed: dog.name,
