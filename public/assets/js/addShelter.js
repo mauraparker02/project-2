@@ -16,7 +16,7 @@ $(function () {
         };
         if (shelterName.val() === "" || shelterCity.val() === "") {
             shelterError.empty();
-            shelterError.append($("<p>").text("Shelter name and city cannot be blank!"));
+            shelterError.append($("<p>").addClass("error").text("Shelter name and city cannot be blank!"));
             setTimeout(function () {
                 shelterError.empty();
             }, 5000);
@@ -42,7 +42,7 @@ $(function () {
 
         if (shelterName.val() === "" || shelterCity.val() === "" || dogName.val() === "" || dogBreed.val() === "") {
             dogError.empty();
-            dogError.append($("<p>").text("All fields must have a value!"));
+            dogError.append($("<p>").addClass("error").text("All fields must have a value!"));
             setTimeout(function () {
                 dogError.empty();
             }, 5000);
@@ -56,7 +56,7 @@ $(function () {
                     renderPage(id);
                 } else {
                     dogError.empty();
-                    dogError.append($("<p>").text("Shelter not found, must create one first!"));
+                    dogError.append($("<p>").addClass("error").text("Shelter not found, must create one first!"));
                     setTimeout(function () {
                         dogError.empty();
                     }, 5000);

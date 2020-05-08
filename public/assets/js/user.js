@@ -14,7 +14,7 @@ $(function () {
     e.preventDefault();
     if (city.val() === "") {
       locationError.empty();
-      locationError.append($("<p>").text("Location input cannot be blank!"));
+      locationError.append($("<p>").addClass("error").text("Location input cannot be blank!"));
       setTimeout(function () {
         locationError.empty();
       }, 5000);
