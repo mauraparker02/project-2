@@ -1,5 +1,18 @@
 .cap {
     text-transform: capitalize;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.capital {
+    text-transform: capitalize;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+    
+.error {
+    color: red;
 }
 
 /* CONSISTENT STYLE */
@@ -15,24 +28,42 @@
 
 .title {
     font-family: 'Jost', sans-serif;
+    margin-top: 3rem;
+    text-align: center;
 }
 
-*+h3, .sub-text{
+*+h3,
+.sub-text {
     font-family: 'Noto Sans', sans-serif;
     margin-top: -11px;
 }
 
-/* NAVBAR */
+.uk-input {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-title {
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #4C8492 !important;
+}
+
+/* NAVBAR STYLE */
+
 .uk-navbar-nav>li>a {
     color: black;
     font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
     text-transform: capitalize;
     transition: .1s ease-in-out;
-    transition-property: color,background-color;
+    transition-property: color, background-color;
 }
 
-.uk-navbar-nav>li>a:hover{
-    color:#4C8492;
+.uk-navbar-nav>li>a:hover {
+    color: #4C8492;
 }
 
 .uk-navbar-container {
@@ -102,3 +133,165 @@
         display: none;
       }
   }
+/* BREEDER HANDLEBAR */
+.breeder-text {
+    text-align: center;
+}
+
+#byBreed,
+#byCity {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#byBreed:hover,
+#byCity:hover,
+#searchCity:hover,
+#searchBreed:hover {
+    background-color: #F7DC95;
+    border-color: #F7DC95;
+    color: black;
+}
+
+#byCity {
+    margin-left: 1rem;
+}
+
+#searchCity,
+#searchBreed {
+    margin-bottom: 3rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.table-title {
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #4C8492 !important;
+}
+
+/* ADD SHELTER HANDLEBAR */
+
+.addShelter-text {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.uk-h6,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #808080;
+}
+
+#find-add {
+    margin-bottom: 3rem;
+}
+
+#add-dog {
+    margin-bottom: 2rem;
+}
+
+.shelter-btn:hover {
+    background-color: #F7DC95;
+    border-color: #F7DC95;
+    color: black;
+}
+
+.addShelter-table {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #4C8492 !important;
+}
+
+.add-table .addShelter-table {
+    text-align: center;
+}
+
+.caption-title {
+    margin-bottom: 2rem;
+}
+
+#shelter-dogs-display {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.delete-btn {
+    font-size: 16px;
+    color: #4C8492;
+    padding: 12px 16px;
+    vertical-align: top;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.delete-btn:hover {
+    background-color: #4C8492 !important;
+    border-color: #4C8492;
+    color: white;
+}
+
+/* USER STYLE */
+.user-text {
+    text-align: center;
+}
+
+#city-location {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+#questions {
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #4C8492 !important;
+}
+
+input {
+    margin-bottom: 1rem;
+}
+
+#find-breed {
+    margin-top: 1rem;
+}
+
+#find-breed:hover {
+    background-color: #F7DC95;
+    border-color: #F7DC95;
+    color: black;
+}
+
+.second-title {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    font-family: 'Jost', sans-serif;
+}
+
+.breed-title {
+    font-family: 'Jost', sans-serif;
+    color: #4C8492 !important;
+}
+
+.breed-body {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+}
+
+.sorry {
+    margin-top: 2rem;
+   color: red;
+   font-size: 12px;
+   font-family: 'Noto Sans', sans-serif;
+}
