@@ -54,6 +54,8 @@ $(function () {
                 const id = res.id;
                 if (res.id > 0) {
                     renderPage(id);
+                    document.getElementById("dog-name").value = "";
+                    document.getElementById("dog-breed").value = "";
                 } else {
                     dogError.empty();
                     dogError.append($("<p>").addClass("error").text("Shelter not found, must create one first!"));
@@ -89,9 +91,6 @@ $(function () {
             for (let i = 0; i < data.ShelterDogs.length; i++) {
                 tbody.append($("<tr>")).append($("<td>").addClass("cap").text(data.ShelterDogs[i].dogName)).append($("<td>").addClass("cap").text(data.ShelterDogs[i].breed)).append($("<button>").text("Adopted").addClass("delete-btn").attr("data-pet-id", data.ShelterDogs[i].id).attr("data-shelter-id", data.ShelterDogs[i].ShelterId));
             }
-
-            document.getElementById("dog-name").value = "";
-            document.getElementById("dog-breed").value = "";
         });
     }
 });
