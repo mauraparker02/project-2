@@ -109,7 +109,7 @@ $(function () {
     sugDiv.append($("<h4>").text(`Average Weight: ${dog.weight.imperial}`))
 
     const userInfo = {
-      breed: dog.name,
+      breed: "american bully",
       city: city.val().toLowerCase().trim()
     }
     $.ajax("/api/results", {
@@ -131,7 +131,7 @@ $(function () {
       } else {
         for (let i = 0; i < shelters.length; i++) {
           for (let j = 0; j < shelters[i].ShelterDogs.length; j++) {
-            if (shelters[i].ShelterDogs[j].breed === dog.name.toLowerCase()) {
+            if (shelters[i].ShelterDogs[j].breed === "american bully") {
               // console.log(shelters[i].ShelterDogs[j].dogName);
               adoptableShelters.push(shelters[i]);
               adoptableDogs.push(shelters[i].ShelterDogs[j].dogName);
@@ -143,9 +143,7 @@ $(function () {
           closeDiv.append($("<h3>").text(`Sorry there are no ${dog.name}'s in your area.`));
         } else {
           for (let i = 0; i < adoptableShelters.length; i++) {
-            closeDiv.append($("<h3>").text("Shelter Name: " + adoptableShelters[i].name));
-            closeDiv.append($("<h3>").text("Shelter City: " + adoptableShelters[i].city));
-            closeDiv.append($("<h3>").text("Dog Name: " + adoptableDogs[i]));
+            closeDiv.append($("<div>").addClass("uk-card uk-card-default uk-card-hover uk-card-body").append($("<h3>").addClass("uk-card-title").text(adoptableShelters[i].name).append($("<h5>").text(adoptableShelters[i].city)).append($("<div>")).append($("<p>").attr("style", "font-size: 18px;").text("Dog Name: " + adoptableDogs[i]))));
           }
         }
       }
