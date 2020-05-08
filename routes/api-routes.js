@@ -56,7 +56,7 @@ router.get("/location/:location", function (req, res) {
 router.get("/quiz", function (req, res){
     const allQuestions= {
         questions: [ {
-            question: "Pick an outdoor activity:",
+            question: "1. Pick an outdoor activity:",
             answers: {
                 a: "Gardening", //all answers that are a should correlate with data from array type1 
                 b: "Boating", //all answers that are a should correlate with data from array type2
@@ -67,7 +67,7 @@ router.get("/quiz", function (req, res){
             
         },
         {
-            question: "Pick a type of bar to hang out at:",
+            question: "2. Pick a type of bar to hang out at:",
             answers: {
                 a: "A local hole in the wall", //all answers that are a should correlate with data from array type1 
                 b: "A speakeasy", //all answers that are a should correlate with data from array type2
@@ -78,7 +78,7 @@ router.get("/quiz", function (req, res){
             
         },
         {
-            question: "Pick a hobby:",
+            question: "3. Pick a hobby:",
             answers: {
                 a: "Reading", //all answers that are a should correlate with data from array type1 
                 b: "Golfing", //all answers that are a should correlate with data from array type2
@@ -89,7 +89,7 @@ router.get("/quiz", function (req, res){
             
         },
         {
-            question: "Pick a fast food chain:",
+            question: "4. Pick a fast food chain:",
             answers: {
                 a: "Panera", //all answers that are a should correlate with data from array type1 
                 b: "Shake Shack", //all answers that are a should correlate with data from array type2
@@ -100,7 +100,7 @@ router.get("/quiz", function (req, res){
             
         },
         {
-            question: "Pick a household chore:",
+            question: "5. Pick a household chore:",
             answers: {
                 a: "Yard work", //all answers that are a should correlate with data from array type1 
                 b: "Vaccuming", //all answers that are a should correlate with data from array type2
@@ -111,7 +111,7 @@ router.get("/quiz", function (req, res){
             
         },
         {
-            question: "Pick a fear:",
+            question: "6. Pick a fear:",
             answers: {
                 a: "Loud Noises", //all answers that are a should correlate with data from array type1 
                 b: "Vermin", //all answers that are a should correlate with data from array type2
@@ -122,7 +122,7 @@ router.get("/quiz", function (req, res){
             
         },
         {
-            question: "Pick a snack:",
+            question: "7. Pick a snack:",
             answers: {
                 a: "Hummus", //all answers that are a should correlate with data from array type1 
                 b: "A charcuterie board", //all answers that are a should correlate with data from array type2

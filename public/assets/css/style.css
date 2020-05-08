@@ -171,3 +171,11 @@ label, .table-title {
     border-color: #4C8492;
     color: white;
 }
+
+#sug-breed{
+border-top: .5px solid rgb(63, 63, 63); 
+}
+
+#dogs-close-by{
+border-top: .5px solid rgb(63, 63, 63); 
+}
