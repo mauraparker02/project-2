@@ -6,10 +6,6 @@ const { QueryTypes } = require('sequelize');
 
 const axios = require("axios");
 
-router.get("/", function (req, res) {
-    res.render("index");
-});
-
 // SHOW ALL INFORMATION FROM DATABASE //
 router.get("/shelterHelper/home", async function (req, res) {
     console.log('im before the queries')
@@ -25,21 +21,8 @@ router.get("/shelterHelper/home", async function (req, res) {
     res.render("breeder", {
         dog: breeds,
         location: location
-    })
-    // db.Result.findAll({}).then(function (data) {
-    //     console.log(data)
-    //     const newBreed = [];
-    //     for(i=0; i<data.length; i++) {
-    //         console.log(data[i].dataValues.breed)
-    //         if(newBreed.indexOf(data[i].dataValues.breed) === -1) {
-    //             newBreed.push(data[i].dataValues.breed)
-    //         }
-    //     }
-    //     res.render("breeder", {
-    //         dog: newBreed
-    //     })
-    // })
-})
+    });
+});
 
 // SHOW WHAT BREED USER SELECTED //
 router.get("/breeds/:breed", function (req, res) {
@@ -52,8 +35,8 @@ router.get("/breeds/:breed", function (req, res) {
         group: ['city']
     }).then(function (data) {
         res.json(data)
-    })
-})
+    });
+});
 
 // SHOW WHAT LOCATION USER SELECTED //
 router.get("/location/:location", function (req, res) {
@@ -67,17 +50,13 @@ router.get("/location/:location", function (req, res) {
         group: ['breed']
     }).then(function (data) {
         res.json(data)
-    })
-})
-
-router.get("/adopt", function (req, res) {
-    res.render("user");
+    });
 });
 
 router.get("/quiz", function (req, res){
     const allQuestions= {
         questions: [ {
-            question: "Pick an outdoor activity",
+            question: "Pick an outdoor activity:",
             answers: {
                 a: "Gardening", //all answers that are a should correlate with data from array type1 
                 b: "Boating", //all answers that are a should correlate with data from array type2
@@ -88,19 +67,75 @@ router.get("/quiz", function (req, res){
             
         },
         {
-            question: "Pick an outdoor activity",
+            question: "Pick a type of bar to hang out at:",
             answers: {
-                a: "Gardening", //all answers that are a should correlate with data from array type1 
-                b: "Boating", //all answers that are a should correlate with data from array type2
-                c: "Hiking", //all answers that are a should correlate with data from array type3
-                d: "Playing a competitive sport", //all answers that are a should correlate with data from array type4 
+                a: "A local hole in the wall", //all answers that are a should correlate with data from array type1 
+                b: "A speakeasy", //all answers that are a should correlate with data from array type2
+                c: "A brewrey", //all answers that are a should correlate with data from array type3
+                d: "A nightclub", //all answers that are a should correlate with data from array type4 
             },
             key: "2"
             
-        },]
+        },
+        {
+            question: "Pick a hobby:",
+            answers: {
+                a: "Reading", //all answers that are a should correlate with data from array type1 
+                b: "Golfing", //all answers that are a should correlate with data from array type2
+                c: "Playing the piano", //all answers that are a should correlate with data from array type3
+                d: "Snowboarding", //all answers that are a should correlate with data from array type4 
+            },
+            key: "3"
+            
+        },
+        {
+            question: "Pick a fast food chain:",
+            answers: {
+                a: "Panera", //all answers that are a should correlate with data from array type1 
+                b: "Shake Shack", //all answers that are a should correlate with data from array type2
+                c: "Waffle House", //all answers that are a should correlate with data from array type3
+                d: "Jimmy John's", //all answers that are a should correlate with data from array type4 
+            },
+            key: "4"
+            
+        },
+        {
+            question: "Pick a household chore:",
+            answers: {
+                a: "Yard work", //all answers that are a should correlate with data from array type1 
+                b: "Vaccuming", //all answers that are a should correlate with data from array type2
+                c: "Laundry", //all answers that are a should correlate with data from array type3
+                d: "Washing dishes", //all answers that are a should correlate with data from array type4 
+            },
+            key: "5"
+            
+        },
+        {
+            question: "Pick a fear:",
+            answers: {
+                a: "Loud Noises", //all answers that are a should correlate with data from array type1 
+                b: "Vermin", //all answers that are a should correlate with data from array type2
+                c: "Claustrophobia", //all answers that are a should correlate with data from array type3
+                d: "Failure", //all answers that are a should correlate with data from array type4 
+            },
+            key: "6"
+            
+        },
+        {
+            question: "Pick a snack:",
+            answers: {
+                a: "Hummus", //all answers that are a should correlate with data from array type1 
+                b: "A charcuterie board", //all answers that are a should correlate with data from array type2
+                c: "Beef Jerky", //all answers that are a should correlate with data from array type3
+                d: "Nachos", //all answers that are a should correlate with data from array type4 
+            },
+            key: "7"
+            
+        }
+    ]
     }
     res.render("user", allQuestions)
-})
+});
 
 // THESE ROUTES LEAD TO THE TYPES 
 
@@ -124,7 +159,7 @@ router.get("/api/type1", function (req, res) {
                 // console.log(data.data[i])
                 if (data.data[i].temperament)
                     temperament = data.data[i].temperament.split(", ")
-                console.log(temperament)
+                // console.log(temperament)
                 for (j = 0; j < temperament.length; j++) {
                     // console.log(temperament[j])
                     // console.log(temperament[j], type1.indexOf(temperament[j]), type2.indexOf(temperament[j]), type3.indexOf(temperament[j]), type4.indexOf(temperament[j]))
@@ -135,13 +170,13 @@ router.get("/api/type1", function (req, res) {
                     }
                 }
             }
-            console.log(breedList) //arrays of the dog breeds from type1 
+            // console.log(breedList) //arrays of the dog breeds from type1 
             var randomBreed1= Math.floor(Math.random()*breedList.length)
-            console.log(breedList[randomBreed1])
+            // console.log(breedList[randomBreed1])
             // res.render("user", { keyName: breedList })
             res.json(breedList[randomBreed1])
-        })
-})
+        });
+});
 
 router.get("/api/type2", function (req, res) {
     axios('https://api.thedogapi.com/v1/breeds?attach_breed=0', { headers: { 'Authorization': 'Bearer ' + "X-Api-Key:c084c79c-3f23-4339-9e9a-844d804bc65d" } })
@@ -152,7 +187,7 @@ router.get("/api/type2", function (req, res) {
                 // console.log(data.data[i])
                 if (data.data[i].temperament)
                     temperament = data.data[i].temperament.split(", ")
-                console.log(temperament)
+                // console.log(temperament)
                 for (j = 0; j < temperament.length; j++) {
                     // console.log(temperament[j])
                     // console.log(temperament[j], type1.indexOf(temperament[j]), type2.indexOf(temperament[j]), type3.indexOf(temperament[j]), type4.indexOf(temperament[j]))
@@ -163,12 +198,12 @@ router.get("/api/type2", function (req, res) {
                     }
                 }
             }
-            console.log(breedList) //arrays of the dog breeds from type1 
+            // console.log(breedList) //arrays of the dog breeds from type1 
             var randomBreed1= Math.floor(Math.random()*breedList.length)
-            console.log(breedList[randomBreed1])
+            // console.log(breedList[randomBreed1])
             // res.render("user", { keyName: breedList })
             res.json(breedList[randomBreed1])
-        })
+        });
 });
 
 router.get("/api/type3", function (req, res) {
@@ -180,7 +215,7 @@ router.get("/api/type3", function (req, res) {
                 // console.log(data.data[i])
                 if (data.data[i].temperament)
                     temperament = data.data[i].temperament.split(", ")
-                console.log(temperament)
+                // console.log(temperament)
                 for (j = 0; j < temperament.length; j++) {
                     // console.log(temperament[j])
                     // console.log(temperament[j], type1.indexOf(temperament[j]), type2.indexOf(temperament[j]), type3.indexOf(temperament[j]), type4.indexOf(temperament[j]))
@@ -191,13 +226,13 @@ router.get("/api/type3", function (req, res) {
                     }
                 }
             }
-            console.log(breedList) //arrays of the dog breeds from type1 
+            // console.log(breedList) //arrays of the dog breeds from type1 
             var randomBreed1= Math.floor(Math.random()*breedList.length)
-            console.log(breedList[randomBreed1])
+            // console.log(breedList[randomBreed1])
             // res.render("user", { keyName: breedList })
             res.json(breedList[randomBreed1])
-        })
-})
+        });
+});
 
 router.get("/api/type4", function (req, res) {
     axios('https://api.thedogapi.com/v1/breeds?attach_breed=0', { headers: { 'Authorization': 'Bearer ' + "X-Api-Key:c084c79c-3f23-4339-9e9a-844d804bc65d" } })
@@ -208,7 +243,7 @@ router.get("/api/type4", function (req, res) {
                 // console.log(data.data[i])
                 if (data.data[i].temperament)
                     temperament = data.data[i].temperament.split(", ")
-                console.log(temperament)
+                // console.log(temperament)
                 for (j = 0; j < temperament.length; j++) {
                     // console.log(temperament[j])
                     // console.log(temperament[j], type1.indexOf(temperament[j]), type2.indexOf(temperament[j]), type3.indexOf(temperament[j]), type4.indexOf(temperament[j]))
@@ -219,17 +254,17 @@ router.get("/api/type4", function (req, res) {
                     }
                 }
             }
-            console.log(breedList) //arrays of the dog breeds from type1 
+            // console.log(breedList) //arrays of the dog breeds from type1 
             var randomBreed1= Math.floor(Math.random()*breedList.length)
-            console.log(breedList[randomBreed1])
+            // console.log(breedList[randomBreed1])
             // res.render("user", { keyName: breedList })
             res.json(breedList[randomBreed1])
-        })
-})
+        });
+});
 
 router.get("/add", function (req, res) {
     res.render("addShelter");
-})
+});
 
 router.post("/api/shelters", function (req, res) {
     db.Shelter.findAll({
@@ -299,7 +334,7 @@ router.get("/api/shelters/:id", function (req, res) {
 router.post("/api/results", function (req, res) {
     // console.log(req.body);
     db.Result.create({
-        breed: "American Bully",
+        breed: req.body.breed,
         city: req.body.city
     }).then(function (response) {
         res.end();
@@ -314,6 +349,23 @@ router.delete("/api/shelterDogs/:id", function(req, res) {
     }).then(function(data) {
         res.json(data);
     });
+});
+
+router.get("/api/shelterDogs/close/:city", function (req, res) {
+    // console.log(req.params);
+    db.Shelter.findAll({
+        where: {
+            city: req.params.city
+        },
+        include: [db.ShelterDogs]
+    }).then(function (data) {
+        // console.log(data);
+        res.json(data);
+    });
+});
+
+router.get("*", function (req, res) {
+    res.render("index");
 });
 
 module.exports = router;

@@ -224,5 +224,23 @@ input {
 
 .second-title {
     margin-top: 2rem;
+    margin-bottom: 3rem;
     font-family: 'Jost', sans-serif;
+}
+
+.breed-title {
+    font-family: 'Jost', sans-serif;
+    color: #4C8492 !important;
+}
+
+.breed-body {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+}
+
+.sorry {
+    margin-top: 2rem;
+   color: red;
+   font-size: 12px;
+   font-family: 'Noto Sans', sans-serif;
 }

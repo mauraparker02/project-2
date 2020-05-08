@@ -7,7 +7,7 @@
     </div>
     <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
-            <li><a href="/adopt">Adopt</a></li>
+            <li><a href="/quiz">Adopt</a></li>
             <li><a href="/shelterHelper/home">Shelter</a></li>
             <li><a href="/add">Add Shelter</a></li>
         </ul>
@@ -24,7 +24,7 @@
         <textarea class="uk-textarea" id="city-location"></textarea>
 
         {{#each questions}}
-        <p id="questions">{{this.question}}:</p>
+        <p id="questions">{{this.question}}</p>
         <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "a" value="1">
         <label for="question{{this.key}}" + "a">{{this.answers.a}}</label>
         <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "b" value="2">
@@ -34,6 +34,26 @@
         <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "d" value="4">
         <label for="question{{this.key}}" + "d">{{this.answers.d}}</label>
         {{/each}}
+
+         {{!-- <h2>Find Your Breed:</h2>
+
+        <label>Location: (City, St)</label>
+        <input class="uk-input" id="city-location"></input> --}}
+        <div id="location-error"></div>
+
+                {{!-- {{#each questions}}
+                <p>{{this.question}}</p>
+                <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "a" value="1">
+                <label for="question{{this.key}}" + "a">{{this.answers.a}}</label>
+                <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "b" value="2">
+                <label for="question{{this.key}}" + "b">{{this.answers.b}}</label>
+                <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "c" value="3">
+                <label for="question{{this.key}}" + "c">{{this.answers.c}}</label>
+                <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "d" value="4">
+                <label for="question{{this.key}}" + "d">{{this.answers.d}}</label>
+                {{/each}} --}}
+        
+
 
         {{!-- <label><input class="uk-radio" type="radio">Label</label>
         <label><input class="uk-checkbox" type="checkbox">Label</label> --}}
@@ -45,4 +65,8 @@
     <div id="sug-breed">
         <h3 class="second-title">Suggested Breed:</h3>
     </div>
+     <div id="dogs-close-by">
+    </div>
+ 
+
 </div>
