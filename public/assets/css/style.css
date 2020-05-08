@@ -86,6 +86,53 @@
     padding-left: 0.8rem;
 }
 
+/* INDEX HANDLEBAR */
+#landing-title {
+    font-family: 'Jost', sans-serif;
+}
+
+#shelter-background {
+    width: 100%;
+
+}
+
+.main-text {
+    padding-left: 4rem;
+}
+
+*+h3, #landing-text {
+    font-family: 'Noto Sans', sans-serif;
+    margin-top: -11px;
+}
+
+#goAdopt, #helpShelter {
+    margin-top: 2rem;
+}
+
+#goAdopt:hover, #helpShelter:hover {
+    background-color: white;
+    border-color: white;
+    color: #4C8492;
+}
+
+#helpShelter {
+    margin-left: 1rem;
+}
+
+.mobile {
+    display: none;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .mobile {
+      display: block;
+    }
+    .web {
+        display: none;
+      }
+  }
 /* BREEDER HANDLEBAR */
 
 
