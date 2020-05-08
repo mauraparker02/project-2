@@ -17,33 +17,39 @@
 
 <div class="uk-container">
     <form>
-        <h2>Find Your Breed:</h2>
 
-        <label>Drop Label</label>
-        <select class="uk-select">
-            <option></option>
-            <option></option>
-        </select>
+         <h2>Find Your Breed:</h2>
 
-        <label>Location: (City, St)</label>
-        <textarea class="uk-textarea" id="city-location"></textarea>
+          <label>Location: (City, St)</label>
+        <textarea class="uk-textarea" id="city-location"></textarea> 
 
-        <label><input class="uk-radio" type="radio">Label</label>
-        <label><input class="uk-checkbox" type="checkbox">Label</label>
-        <label><input class="uk-range" type="range">Slide</label>
+                {{#each questions}}
+                <p>{{this.question}}</p>
+                <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "a" value="1">
+                <label for="question{{this.key}}" + "a">{{this.answers.a}}</label>
+                <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "b" value="2">
+                <label for="question{{this.key}}" + "b">{{this.answers.b}}</label>
+                <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "c" value="3">
+                <label for="question{{this.key}}" + "c">{{this.answers.c}}</label>
+                <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "d" value="4">
+                <label for="question{{this.key}}" + "d">{{this.answers.d}}</label>
+                {{/each}}
         
+
+
+        {{!-- <label><input class="uk-radio" type="radio">Label</label>
+        <label><input class="uk-checkbox" type="checkbox">Label</label> --}}
+        {{!-- <label><input class="uk-range" type="range">Slide</label>
+         --}}
+
         <button class="uk-button uk-button-primary" id="find-breed">Submit</button>
     </form>
 
     <hr>
 
-    <div id="sugBreed">
-        <h3>Suggested Breeds:</h3>
-        <ul class="uk-list uk-list-divider">
-            <li>List item 1</li>
-            <li>List item 2</li>
-            <li>List item 3</li>
-        </ul>
+    <div id="sug-breed">
+        <h3>Suggested Breed:</h3>
+        
     </div>
 
 </div>
