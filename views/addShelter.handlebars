@@ -14,59 +14,54 @@
     </div>
 </nav>   
 
+<div class="uk-container">
 
-
-
-
-    <div class="uk-container">
-       
-        <form>
-            <h1 class="title">Select or Add a Shelter</h1>
-            <h4 class="sub-text addShelter-text">
-                Search for available shelters along with their current available dogs.
-                You can also help us by adding shelters and dogs from different areas.
-                By doing that, you are helping more dogs find their forever home.
-            </h4>
-             <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
-                 <div>
-            <label>Shelter Name:</label>
+    <form>
+        <h1 class="title">Select or Add a Shelter</h1>
+        <h4 class="sub-text addShelter-text">
+            Search for available shelters along with their current available dogs.
+            You can also help us by adding shelters and dogs from different areas.
+            By doing that, you are helping more dogs find their forever home.
+        </h4>
+            <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
+        <div>
+            <label class="form-title">Shelter Name:</label>
             <input class="uk-input" id="shelter-name"></input>
 
-            <label>Shelter City:</label>
+            <label class="form-title">Shelter City:</label>
             <h6>City, State (ex. Chicago, IL)</h6>
             <input class="uk-input" id="city-name"></input>
 
             <button class="uk-button uk-button-primary shelter-btn" id="find-add">Find / Add Shelter</button>
             <div id="shelter-error"></div>
-            </div>
+        </div>
 
-    <div>
-            <label>Dog Name:</label>
+        <div>
+            <label class="form-title">Dog Name:</label>
             <input class="uk-input dog-info" id="dog-name"></input>
 
-            <label>Dog Breed:</label>
+            <label class="form-title">Dog Breed:</label>
             <input class="uk-input dog-info" id="dog-breed"></input>
 
             <button class="uk-button uk-button-primary shelter-btn" id="add-dog">Add Dog</button>
             <div id="dog-error"></div>
-        </form>
+    </form>
         </div>
-        </div>
+</div>
 
-        <div id="shelter-dogs-display" class="uk-text-center">
-            <div>
-            <table class="uk-table">
-                <caption id="title" class="caption-title"></caption>
-                <thead>
-                    <tr>
-                        <th class="addShelter-table">Dog Name</th>
-                        <th class="addShelter-table">Dog Breed</th>
-                        <th class="addShelter-table">Adopted</th>
-                    </tr>
-                </thead>
-                <tbody id="table-body">
-
-                </tbody>
-            </table>
-        </div>
+<div id="shelter-dogs-display" class="uk-text-center">
+    <div>
+        <table class="uk-table add-table">
+            <caption id="title" class="caption-title"></caption>
+            <thead>
+                <tr>
+                    <th class="addShelter-table">Dog Name</th>
+                    <th class="addShelter-table">Dog Breed</th>
+                    <th class="addShelter-table">Adopted</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
     </div>
+</div>

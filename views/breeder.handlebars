@@ -2,7 +2,7 @@
     <div class="uk-navbar-left">
         <img src="/assets/images/logo-nav.png" id="nav-logo" width="50" height="50">
         <ul class="uk-navbar-nav">
-        <li id="navbrand">Shelter Helper</li>
+            <li id="navbrand">Shelter Helper</li>
         </ul>
     </div>
     <div class="uk-navbar-right">
@@ -22,8 +22,6 @@
     <button class="uk-button uk-button-primary" id="byCity">City</button>
     </p>
     {{!-- <button class="uk-button uk-button-primary" id="add-shelter">Add Shelter/Dog</button> --}}
-   
-  
 </div>
 
 {{!-- IF SORTED BY BREED --}}
@@ -31,7 +29,7 @@
     <div class="uk-container">
      <form>
             <div class="uk-margin">
-                <label>Choose a Breed:</label>
+                <label class="form-title">Choose a Breed:</label>
                 <select class="uk-select cap" id="pickBreed">
                     {{#each dog}}
                     <option class="cap">{{this.breed}}</option>
@@ -41,7 +39,6 @@
             <button class="uk-button uk-button-primary" id="searchBreed">Search</button>
         </form>
     </div>
-
     <div id="breed-table">
         <div class="uk-container">
             <table class="uk-table uk-table-divider">
@@ -64,7 +61,7 @@
     <div class="uk-container">
         <form>
             <div class="uk-margin">
-                <label>Choose a City:</label>
+                <label class="form-title">Choose a City:</label>
                 <select class="uk-select cap" id="pickCity">
                     {{#each location}}
                     <option class="cap">{{this.city}}</option>
@@ -74,7 +71,6 @@
             <button class="uk-button uk-button-primary" id="searchCity">Search</button>
         </form>
     </div>
-
     <div id="city-table">
         <div class="uk-container">
             <table class="uk-table uk-table-divider">

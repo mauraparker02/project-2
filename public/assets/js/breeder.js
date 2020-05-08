@@ -72,7 +72,7 @@ $(function() {
             for(i=0; i<data.length; i++) {
                 console.log(data[i].city)
                 // $("#breedTable").append($("<tr>").append($("<td>").text(data[i].city)));
-                $("#breedTable").append($("<tr>").append($("<td>").addClass("cap").text(data[i].city)).append($("<td>").text(data[i].cnt)));
+                $("#breedTable").append($("<tr>").append($("<td>").addClass("capital").text(data[i].city)).append($("<td>").text(data[i].cnt)));
             }
             // location.reload();
             }
@@ -91,7 +91,7 @@ $(function() {
             $("#cityTable").empty();
             for(i=0; i<data.length; i++) {
                 console.log(data[i].breed)
-                $("#cityTable").append($("<tr>").append($("<td>").addClass("cap").text(data[i].breed)).append($("<td>").text(data[i].cnt)));
+                $("#cityTable").append($("<tr>").append($("<td>").addClass("capital").text(data[i].breed)).append($("<td>").text(data[i].cnt)));
             }
             // location.reload();
             }
