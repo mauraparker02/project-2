@@ -109,7 +109,7 @@ $(function () {
     sugDiv.append($("<h4>").text(`Average Weight: ${dog.weight.imperial}`))
 
     const userInfo = {
-      breed: "american bully",
+      breed: dog.name,
       city: city.val().toLowerCase().trim()
     }
     $.ajax("/api/results", {
@@ -131,7 +131,7 @@ $(function () {
       } else {
         for (let i = 0; i < shelters.length; i++) {
           for (let j = 0; j < shelters[i].ShelterDogs.length; j++) {
-            if (shelters[i].ShelterDogs[j].breed === "american bully") {
+            if (shelters[i].ShelterDogs[j].breed === dog.name.toLowerCase()) {
               // console.log(shelters[i].ShelterDogs[j].dogName);
               adoptableShelters.push(shelters[i]);
               adoptableDogs.push(shelters[i].ShelterDogs[j].dogName);
