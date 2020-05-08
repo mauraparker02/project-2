@@ -88,3 +88,18 @@
 #helpShelter {
     margin-left: 1rem;
 }
+
+.mobile {
+    display: none;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .mobile {
+      display: block;
+    }
+    .web {
+        display: none;
+      }
+  }
