@@ -9,6 +9,9 @@
     text-transform: capitalize;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
+    
+.error {
+    color: red;
 }
 
 /* CONSISTENT STYLE */
