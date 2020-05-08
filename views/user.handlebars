@@ -21,7 +21,8 @@
          <h2>Find Your Breed:</h2>
 
           <label>Location: (City, St)</label>
-        <textarea class="uk-textarea" id="city-location"></textarea> 
+        <input class="uk-input" id="city-location"></input>
+        <div id="location-error"></div>
 
                 {{#each questions}}
                 <p>{{this.question}}</p>
