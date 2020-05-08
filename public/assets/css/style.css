@@ -105,17 +105,21 @@
     margin-top: -11px;
 }
 
-#goAdopt, #helpShelter {
+#goAdopt, #helpShelter, #addShelter {
     margin-top: 2rem;
 }
 
-#goAdopt:hover, #helpShelter:hover {
+#goAdopt:hover, #helpShelter:hover, #addShelter:hover {
     background-color: white;
     border-color: white;
     color: #4C8492;
 }
 
 #helpShelter {
+    margin-left: 1rem;
+}
+
+#addShelter {
     margin-left: 1rem;
 }
 
