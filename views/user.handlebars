@@ -2,8 +2,7 @@
     <div class="uk-navbar-left">
         <img src="/assets/images/logo-nav.png" id="nav-logo" width="50" height="50">
         <ul class="uk-navbar-nav">
-       
-        <li id="navbrand">Shelter Helper</li>
+            <li id="navbrand">Shelter Helper</li>
         </ul>
     </div>
     <div class="uk-navbar-right">
@@ -13,43 +12,37 @@
             <li><a href="/add">Add Shelter</a></li>
         </ul>
     </div>
-</nav> 
+</nav>
 
 <div class="uk-container">
     <form>
+        <h1 class="title user-title">Find the Perfect Dog</h1>
+        <h4 class="sub-text user-text">Take our test to find out which dog best suits your personality.</h4>
+        {{!-- <h2>Find Your Breed:</h2> --}}
+        <label class="form-title">Location:</label>
+        <h6>City, State (ex. Chicago, IL)</h6>
+        <textarea class="uk-textarea" id="city-location"></textarea>
 
-         <h2>Find Your Breed:</h2>
-
-          <label>Location: (City, St)</label>
-        <textarea class="uk-textarea" id="city-location"></textarea> 
-
-                {{#each questions}}
-                <p>{{this.question}}</p>
-                <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "a" value="1">
-                <label for="question{{this.key}}" + "a">{{this.answers.a}}</label>
-                <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "b" value="2">
-                <label for="question{{this.key}}" + "b">{{this.answers.b}}</label>
-                <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "c" value="3">
-                <label for="question{{this.key}}" + "c">{{this.answers.c}}</label>
-                <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "d" value="4">
-                <label for="question{{this.key}}" + "d">{{this.answers.d}}</label>
-                {{/each}}
-        
-
+        {{#each questions}}
+        <p id="questions">{{this.question}}:</p>
+        <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "a" value="1">
+        <label for="question{{this.key}}" + "a">{{this.answers.a}}</label>
+        <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "b" value="2">
+        <label for="question{{this.key}}" + "b">{{this.answers.b}}</label>
+        <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "c" value="3">
+        <label for="question{{this.key}}" + "c">{{this.answers.c}}</label>
+        <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "d" value="4">
+        <label for="question{{this.key}}" + "d">{{this.answers.d}}</label>
+        {{/each}}
 
         {{!-- <label><input class="uk-radio" type="radio">Label</label>
         <label><input class="uk-checkbox" type="checkbox">Label</label> --}}
         {{!-- <label><input class="uk-range" type="range">Slide</label>
          --}}
-
-        <button class="uk-button uk-button-primary" id="find-breed">Submit</button>
     </form>
-
+    <button class="uk-button uk-button-primary" id="find-breed">Submit</button>
     <hr>
-
     <div id="sug-breed">
-        <h3>Suggested Breed:</h3>
-        
+        <h3 class="second-title">Suggested Breed:</h3>
     </div>
-
 </div>
