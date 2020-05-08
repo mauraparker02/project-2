@@ -134,6 +134,13 @@
       }
   }
 /* BREEDER HANDLEBAR */
+
+
+.find-your-breed{
+    font-family: 'Noto Sans', sans-serif;
+    margin-top: 0px;
+}
+
 .breeder-text {
     text-align: center;
 }
@@ -241,6 +248,18 @@ h6 {
     color: white;
 }
 
+#sug-breed{
+    padding-top: 10px;
+    margin-top: 15px;
+border-top: .5px solid rgb(63, 63, 63); 
+}
+
+#dogs-close-by{
+    padding-top: 10px;
+    padding-bottom: 20px; 
+border-top: .5px solid rgb(63, 63, 63); 
+}
+
 /* USER STYLE */
 .user-text {
     text-align: center;
@@ -248,10 +267,9 @@ h6 {
 
 #city-location {
     margin-top: 1rem;
-    margin-bottom: 2rem;
 }
 
-#questions {
+.questions {
     text-transform: uppercase;
     letter-spacing: 0.8px;
     font-size: 16px !important;
@@ -259,9 +277,9 @@ h6 {
     color: #4C8492 !important;
 }
 
-input {
+/* input {
     margin-bottom: 1rem;
-}
+} */
 
 #find-breed {
     margin-top: 1rem;
@@ -293,5 +311,12 @@ input {
     margin-top: 2rem;
    color: red;
    font-size: 12px;
+   font-family: 'Noto Sans', sans-serif;
+}
+
+.no-shelter {
+    margin-top: 2rem;
+   color: red;
+   font-size: 18px;
    font-family: 'Noto Sans', sans-serif;
 }

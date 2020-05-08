@@ -21,37 +21,36 @@
         {{!-- <h2>Find Your Breed:</h2> --}}
         <label class="form-title">Location:</label>
         <h6>City, State (ex. Chicago, IL)</h6>
-        <textarea class="uk-textarea" id="city-location"></textarea>
+        <input class="uk-input" id="city-location"></input>
 
-        {{#each questions}}
-        <p id="questions">{{this.question}}</p>
-        <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "a" value="1">
-        <label for="question{{this.key}}" + "a">{{this.answers.a}}</label>
-        <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "b" value="2">
-        <label for="question{{this.key}}" + "b">{{this.answers.b}}</label>
-        <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "c" value="3">
-        <label for="question{{this.key}}" + "c">{{this.answers.c}}</label>
-        <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "d" value="4">
-        <label for="question{{this.key}}" + "d">{{this.answers.d}}</label>
-        {{/each}}
+          <h2 class="find-your-breed">Find Your Breed:</h2>
 
-         {{!-- <h2>Find Your Breed:</h2>
+        {{!-- <label>Location: (City, St)</label>
+        <input class="uk-input" id="city-location"></input> 
+        <div id="location-error"></div> --}}
 
-        <label>Location: (City, St)</label>
-        <input class="uk-input" id="city-location"></input> --}}
-        <div id="location-error"></div>
-
-                {{!-- {{#each questions}}
-                <p>{{this.question}}</p>
+                {{#each questions}}
+                <p class="questions">{{this.question}}</p>
+                <div>
                 <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "a" value="1">
                 <label for="question{{this.key}}" + "a">{{this.answers.a}}</label>
+                </div>
+
+                <div>
                 <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "b" value="2">
                 <label for="question{{this.key}}" + "b">{{this.answers.b}}</label>
+                </div>
+
+                <div>
                 <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "c" value="3">
                 <label for="question{{this.key}}" + "c">{{this.answers.c}}</label>
+                </div>
+
+                <div>
                 <input type="radio" name="question{{this.key}}" id="question{{this.key}}" + "d" value="4">
                 <label for="question{{this.key}}" + "d">{{this.answers.d}}</label>
-                {{/each}} --}}
+                </div>
+                {{/each}}
         
 
 
@@ -61,9 +60,11 @@
          --}}
     </form>
     <button class="uk-button uk-button-primary" id="find-breed">Submit</button>
-    <hr>
+    
+    <div id="location-error"></div> 
+
     <div id="sug-breed">
-        <h3 class="second-title">Suggested Breed:</h3>
+        {{!-- <h3 class="second-title">Suggested Breed:</h3> --}}
     </div>
     <div id="dogs-close-by" class="uk-child-width-1-2@s">
 
