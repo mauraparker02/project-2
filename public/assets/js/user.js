@@ -5,7 +5,8 @@ $(function () {
   let type3 = 0;
   let type4 = 0;
 
-  const div = $("#sug-breed");
+  const sugDiv = $("#sug-breed");
+  const closeDiv = $("#dogs-close-by");
   const city = $("#city-location");
   const locationError = $("#location-error");
 
@@ -85,13 +86,13 @@ $(function () {
   });
 
   function renderDog(dog) {
-    div.empty();
-    div.append($("<h3>").text(dog.name))
-    div.append($("<h4>").text(dog.breed_group))
-    div.append($("<h4>").text(dog.bred_for))
-    div.append($("<h4>").text(dog.life_span))
-    div.append($("<h4>").text(dog.height.imperial))
-    div.append($("<h4>").text(dog.weight.imperial))
+    sugDiv.empty();
+    sugDiv.append($("<h3>").text(dog.name))
+    sugDiv.append($("<h4>").text(dog.breed_group))
+    sugDiv.append($("<h4>").text(dog.bred_for))
+    sugDiv.append($("<h4>").text(dog.life_span))
+    sugDiv.append($("<h4>").text(dog.height.imperial))
+    sugDiv.append($("<h4>").text(dog.weight.imperial))
 
     const userInfo = {
       breed: dog.name,
@@ -102,6 +103,38 @@ $(function () {
       data: userInfo
     }).then(function (data) {
       console.log("saved");
+    });
+
+    $.ajax("/api/shelterDogs/close/" + userInfo.city, {
+      type: "GET"
+    }).then(function (shelters) {
+      console.log(shelters);
+      closeDiv.empty();
+      const adoptableDogs = [];
+      const adoptableShelters = [];
+      if (shelters.length === 0) {
+        closeDiv.append($("<h3>").text("Sorry no shelters in your area, please try another location or add a shelter with dogs!"));
+      } else {
+        for (let i = 0; i < shelters.length; i++) {
+          for (let j = 0; j < shelters[i].ShelterDogs.length; j++) {
+            if (shelters[i].ShelterDogs[j].breed === dog.name.toLowerCase()) {
+              // console.log(shelters[i].ShelterDogs[j].dogName);
+              adoptableShelters.push(shelters[i]);
+              adoptableDogs.push(shelters[i].ShelterDogs[j].dogName);
+            }
+          }
+        }
+        console.log(adoptableDogs);
+        if (adoptableDogs.length === 0) {
+          closeDiv.append($("<h3>").text(`Sorry there are no ${dog.name}'s in your area.`));
+        } else {
+          for (let i = 0; i < adoptableShelters.length; i++) {
+            closeDiv.append($("<h3>").text("Shelter Name: " + adoptableShelters[i].name));
+            closeDiv.append($("<h3>").text("Shelter City: " + adoptableShelters[i].city));
+            closeDiv.append($("<h3>").text("Dog Name: " + adoptableDogs[i]));
+          }
+        }
+      }
     });
   };
 });

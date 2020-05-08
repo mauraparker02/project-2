@@ -103,7 +103,7 @@ router.get("/api/type1", function (req, res) {
                 // console.log(data.data[i])
                 if (data.data[i].temperament)
                     temperament = data.data[i].temperament.split(", ")
-                console.log(temperament)
+                // console.log(temperament)
                 for (j = 0; j < temperament.length; j++) {
                     // console.log(temperament[j])
                     // console.log(temperament[j], type1.indexOf(temperament[j]), type2.indexOf(temperament[j]), type3.indexOf(temperament[j]), type4.indexOf(temperament[j]))
@@ -114,9 +114,9 @@ router.get("/api/type1", function (req, res) {
                     }
                 }
             }
-            console.log(breedList) //arrays of the dog breeds from type1 
+            // console.log(breedList) //arrays of the dog breeds from type1 
             var randomBreed1= Math.floor(Math.random()*breedList.length)
-            console.log(breedList[randomBreed1])
+            // console.log(breedList[randomBreed1])
             // res.render("user", { keyName: breedList })
             res.json(breedList[randomBreed1])
         });
@@ -131,7 +131,7 @@ router.get("/api/type2", function (req, res) {
                 // console.log(data.data[i])
                 if (data.data[i].temperament)
                     temperament = data.data[i].temperament.split(", ")
-                console.log(temperament)
+                // console.log(temperament)
                 for (j = 0; j < temperament.length; j++) {
                     // console.log(temperament[j])
                     // console.log(temperament[j], type1.indexOf(temperament[j]), type2.indexOf(temperament[j]), type3.indexOf(temperament[j]), type4.indexOf(temperament[j]))
@@ -142,9 +142,9 @@ router.get("/api/type2", function (req, res) {
                     }
                 }
             }
-            console.log(breedList) //arrays of the dog breeds from type1 
+            // console.log(breedList) //arrays of the dog breeds from type1 
             var randomBreed1= Math.floor(Math.random()*breedList.length)
-            console.log(breedList[randomBreed1])
+            // console.log(breedList[randomBreed1])
             // res.render("user", { keyName: breedList })
             res.json(breedList[randomBreed1])
         });
@@ -159,7 +159,7 @@ router.get("/api/type3", function (req, res) {
                 // console.log(data.data[i])
                 if (data.data[i].temperament)
                     temperament = data.data[i].temperament.split(", ")
-                console.log(temperament)
+                // console.log(temperament)
                 for (j = 0; j < temperament.length; j++) {
                     // console.log(temperament[j])
                     // console.log(temperament[j], type1.indexOf(temperament[j]), type2.indexOf(temperament[j]), type3.indexOf(temperament[j]), type4.indexOf(temperament[j]))
@@ -170,9 +170,9 @@ router.get("/api/type3", function (req, res) {
                     }
                 }
             }
-            console.log(breedList) //arrays of the dog breeds from type1 
+            // console.log(breedList) //arrays of the dog breeds from type1 
             var randomBreed1= Math.floor(Math.random()*breedList.length)
-            console.log(breedList[randomBreed1])
+            // console.log(breedList[randomBreed1])
             // res.render("user", { keyName: breedList })
             res.json(breedList[randomBreed1])
         });
@@ -187,7 +187,7 @@ router.get("/api/type4", function (req, res) {
                 // console.log(data.data[i])
                 if (data.data[i].temperament)
                     temperament = data.data[i].temperament.split(", ")
-                console.log(temperament)
+                // console.log(temperament)
                 for (j = 0; j < temperament.length; j++) {
                     // console.log(temperament[j])
                     // console.log(temperament[j], type1.indexOf(temperament[j]), type2.indexOf(temperament[j]), type3.indexOf(temperament[j]), type4.indexOf(temperament[j]))
@@ -198,9 +198,9 @@ router.get("/api/type4", function (req, res) {
                     }
                 }
             }
-            console.log(breedList) //arrays of the dog breeds from type1 
+            // console.log(breedList) //arrays of the dog breeds from type1 
             var randomBreed1= Math.floor(Math.random()*breedList.length)
-            console.log(breedList[randomBreed1])
+            // console.log(breedList[randomBreed1])
             // res.render("user", { keyName: breedList })
             res.json(breedList[randomBreed1])
         });
@@ -291,6 +291,19 @@ router.delete("/api/shelterDogs/:id", function(req, res) {
             id: req.params.id
         }
     }).then(function(data) {
+        res.json(data);
+    });
+});
+
+router.get("/api/shelterDogs/close/:city", function (req, res) {
+    // console.log(req.params);
+    db.Shelter.findAll({
+        where: {
+            city: req.params.city
+        },
+        include: [db.ShelterDogs]
+    }).then(function (data) {
+        // console.log(data);
         res.json(data);
     });
 });
