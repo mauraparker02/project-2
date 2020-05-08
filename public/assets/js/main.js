@@ -1,11 +1,13 @@
 $(function() {
     $("#goAdopt").on("click", function(e) {
         e.preventDefault();
-        $.ajax("/adopt", {
+        $.ajax("/quiz", {
             type: "GET"
         }).then(function() {
-            location.assign("/adopt");
+            location.assign("/quiz");
         });
+        // location.href="/api/type1";
+        
     });
 
     $("#helpShelter").on("click", function(e) {
