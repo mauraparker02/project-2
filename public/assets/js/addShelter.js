@@ -16,7 +16,7 @@ $(function () {
         };
         if (shelterName.val() === "" || shelterCity.val() === "") {
             shelterError.empty();
-            shelterError.append($("<p>").text("Shelter name and city cannot be blank!"));
+            shelterError.append($("<p>").addClass("error").text("Shelter name and city cannot be blank!"));
             setTimeout(function () {
                 shelterError.empty();
             }, 5000);
@@ -42,7 +42,7 @@ $(function () {
 
         if (shelterName.val() === "" || shelterCity.val() === "" || dogName.val() === "" || dogBreed.val() === "") {
             dogError.empty();
-            dogError.append($("<p>").text("All fields must have a value!"));
+            dogError.append($("<p>").addClass("error").text("All fields must have a value!"));
             setTimeout(function () {
                 dogError.empty();
             }, 5000);
@@ -54,9 +54,11 @@ $(function () {
                 const id = res.id;
                 if (res.id > 0) {
                     renderPage(id);
+                    document.getElementById("dog-name").value = "";
+                    document.getElementById("dog-breed").value = "";
                 } else {
                     dogError.empty();
-                    dogError.append($("<p>").text("Shelter not found, must create one first!"));
+                    dogError.append($("<p>").addClass("error").text("Shelter not found, must create one first!"));
                     setTimeout(function () {
                         dogError.empty();
                     }, 5000);
@@ -89,9 +91,6 @@ $(function () {
             for (let i = 0; i < data.ShelterDogs.length; i++) {
                 tbody.append($("<tr>")).append($("<td>").addClass("cap").text(data.ShelterDogs[i].dogName)).append($("<td>").addClass("cap").text(data.ShelterDogs[i].breed)).append($("<button>").text("Adopted").addClass("delete-btn").attr("data-pet-id", data.ShelterDogs[i].id).attr("data-shelter-id", data.ShelterDogs[i].ShelterId));
             }
-
-            document.getElementById("dog-name").value = "";
-            document.getElementById("dog-breed").value = "";
         });
     }
 });

@@ -5,6 +5,10 @@
     margin-bottom: 0.5rem;
 }
 
+.error {
+    color: red;
+}
+
 /* CONSISTENT STYLE */
 .uk-button {
     font-family: 'Noto Sans', sans-serif;
