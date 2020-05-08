@@ -8,7 +8,7 @@
     </div>
     <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
-            <li><a href="/adopt">Adopt</a></li>
+            <li><a href="/quiz">Adopt</a></li>
             <li><a href="/shelterHelper/home">Shelter</a></li>
             <li><a href="/add">Add Shelter</a></li>
         </ul>
@@ -21,7 +21,8 @@
          <h2>Find Your Breed:</h2>
 
           <label>Location: (City, St)</label>
-        <textarea class="uk-textarea" id="city-location"></textarea> 
+        <input class="uk-input" id="city-location"></input>
+        <div id="location-error"></div>
 
                 {{#each questions}}
                 <p>{{this.question}}</p>
@@ -50,6 +51,9 @@
     <div id="sug-breed">
         <h3>Suggested Breed:</h3>
         
+    </div>
+    <div id="dogs-close-by">
+
     </div>
 
 </div>
